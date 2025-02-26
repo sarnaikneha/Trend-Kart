@@ -1,0 +1,126 @@
+/* Navbar Container */
+.navbar {
+  position: fixed; /* ✅ Navbar stays at the top */
+  top: 0;
+  left: 0;
+  height: 60px; /* ✅ Slightly increased height */
+  width: 100%;
+  background-color: #f2e1f4;
+  padding: 0 40px; /* ✅ More padding for spacing */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* ✅ Evenly distribute left, middle, right */
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Prevent content from hiding behind navbar */
+body {
+  padding-top: 60px; /* ✅ Matches navbar height */
+}
+
+/* Left Section: Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ✅ Space between logo and text */
+  flex: 1; /* ✅ Allocates equal space */
+}
+
+.logo-img {
+  width: 45px; /* ✅ Adjust size */
+  height: auto;
+}
+
+.nav-logo p {
+  font-family: "Poppins", sans-serif; /* ✅ Stylish font */
+  font-size: 24px; /* ✅ Large size */
+  font-weight: 700;
+  color: #9504f5;
+}
+
+/* Middle Section: Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px; /* ✅ Even spacing */
+  flex: 6; /* ✅ Allocates more space for the menu */
+  justify-content: center; /* ✅ Centers the menu */
+  padding: 0;
+}
+.nav-menu hr {
+  border: none;
+  width: 80%;
+  height: 1.5px;
+  border-radius: 10px;
+  background-color: #ce06fa;
+}
+
+.nav-menu li {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #2b2a2a;
+  transition: color 0.3s;
+}
+
+.nav-menu li:hover {
+  color: #b335d9;
+}
+
+/* Right Section: Login & Cart */
+.nav-login-cart {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* ✅ Space between login button and cart icon */
+  flex: 1; /* ✅ Allocates equal space */
+  justify-content: flex-end;
+  margin-right: 100px; /* ✅ Aligns items to the right */
+}
+
+.nav-login-cart button {
+  background-color: #faf7f7;
+  color: rgb(45, 45, 45);
+  cursor: pointer;
+  border: #333 1px solid;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-login-cart button:hover {
+  background-color: #b768eb;
+}
+
+.cart-img {
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+}
+.nav-cart-count {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -35px;
+  margin-left: -55px;
+  border-radius: 11px;
+  font-size: 14px;
+  background-color: #cd05fa;
+  color: rgb(244, 243, 243);
+}
+
+/* ✅ Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hide menu on small screens */
+  }
+  .nav-login-cart {
+    gap: 10px; /* Reduce spacing on small screens */
+  }
+}
