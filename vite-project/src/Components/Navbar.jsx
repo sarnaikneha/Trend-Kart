@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Styling/Navbar.css"; // Check the correct file name
 import logo from "../assets/logo.png"; // ✅ Import images
 import shopingcart from "../assets/shoppingcart.png"; // ✅ Import images
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -24,38 +25,55 @@ export const Navbar = () => {
             }}
           >
             {" "}
-            Shop {menu === "Shop" ? <hr /> : <></>}{" "}
+            <Link style={{ textDecoration: "none" }} to="/">
+              Shop
+            </Link>{" "}
+            {menu === "Shop" ? <hr /> : <></>}{" "}
           </li>
           <li
             onClick={() => {
               setMenu("Men");
             }}
           >
-            Men {menu === "Men" ? <hr /> : <></>}
+            <Link style={{ textDecoration: "none" }} to="/Mens">
+              Men
+            </Link>
+            {menu === "Mens" ? <hr /> : <></>}
           </li>
           <li
             onClick={() => {
               setMenu("Women");
             }}
           >
-            Women {menu === "Women" ? <hr /> : <></>}
+            <Link style={{ textDecoration: "none" }} to="/Womens">
+              Women
+            </Link>
+            {menu === "Women" ? <hr /> : <></>}
           </li>
           <li
             onClick={() => {
               setMenu("Kids");
             }}
           >
-            Kids {menu === "Kids" ? <hr /> : <></>}
+            <Link style={{ textDecoration: "none" }} to="/Kids">
+              Kids
+            </Link>
+            {menu === "Kids" ? <hr /> : <></>}
           </li>
         </ul>
         <div className="nav-login-cart">
-          <button>Login</button>
-          <img
-            src={shopingcart}
-            alt="Cart"
-            className="cart-img"
-            style={{ width: "30px", height: "auto" }}
-          />
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+          <Link to="/cart">
+            {" "}
+            <img
+              src={shopingcart}
+              alt="Cart"
+              className="cart-img"
+              style={{ width: "30px", height: "auto" }}
+            />
+          </Link>
           <div className="nav-cart-count">0</div>
         </div>
       </div>
