@@ -22,6 +22,11 @@ const Footer = () => {
     }
   };
 
+  // Scroll to Top Function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -79,6 +84,9 @@ const Footer = () => {
             www.trendkart.com
           </a>
         </div>
+        <button className="go-to-top" onClick={scrollToTop}>
+          Go to Top
+        </button>
       </div>
     </footer>
   );

@@ -1,0 +1,82 @@
+/* LoginSignup.css */
+
+body {
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.toggle-link {
+  color: #007bff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
