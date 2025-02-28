@@ -1,13 +1,13 @@
 import React from "react";
-import Men from "../Components/Men/Men";
+import Women from "../Components/Women/Women";
 import Footer from "../Components/Footer/Footer";
 
-const ShopCategory = () => {
+const ShopCategoryW = () => {
   return (
     <div>
-      <Men />
+      <Women />
       <Footer />
     </div>
   );
 };
-export default ShopCategory;
+export default ShopCategoryW;

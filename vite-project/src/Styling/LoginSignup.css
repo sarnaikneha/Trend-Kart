@@ -1,7 +1,7 @@
 /* LoginSignup.css */
 
 body {
-  background-color: #f3f4f6;
+  background-color: #ebc8f2;
   font-family: Arial, sans-serif;
 }
 
@@ -20,12 +20,13 @@ body {
   width: 100%;
   max-width: 400px;
   text-align: center;
+  margin-left: 230px;
 }
 
 .title {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #333;
+  color: #e341f1;
   margin-bottom: 1rem;
 }
 
@@ -51,8 +52,8 @@ body {
 
 .submit-btn {
   width: 100%;
-  background: #007bff;
-  color: white;
+  background: #dd93f1;
+  color: rgb(45, 44, 44);
   padding: 0.8rem;
   font-size: 1rem;
   border: none;
@@ -62,7 +63,7 @@ body {
 }
 
 .submit-btn:hover {
-  background: #0056b3;
+  background: #cb65ea;
 }
 
 .toggle-text {
