@@ -109,6 +109,10 @@ const MenPage = () => {
 
   return (
     <div className="men-page">
+      <img
+        src="https://img.freepik.com/free-psd/fashion-sale-banner-template_23-2148939458.jpg"
+        alt=""
+      />
       <h2>Men's Collection</h2>
 
       <div className="men-products">
