@@ -7,8 +7,12 @@
 
 .men-page h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 90px;
   color: #333;
+  width: 80vw;
+  background-color: #cf52ef;
 }
 
 /* Product Grid */
