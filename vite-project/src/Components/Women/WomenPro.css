@@ -1,83 +1,156 @@
-/* Men's Page Container */
-.men-page {
+/* WomenPro.css */
+/* Women's Page Styling */
+.women-page {
   text-align: center;
   padding: 20px;
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
   background-color: #ebc8f2;
 }
+.title {
+}
 
-.men-page h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+/* Heading Styling */
+.women-page h2 {
   color: #333;
+  margin-right: 10px;
+
+  width: 100vw;
+  font-size: 28px;
+  margin-bottom: 2px;
+  background-color: #dd66f2;
 }
 
-/* Product Grid */
-.men-products {
+/* Category List */
+.category-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-/* Individual Product Card */
-.men-product-card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.men-product-card:hover {
-  transform: scale(1.05);
-}
-
-/* Product Image */
-.product-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Price and Rating */
-.price {
+/* Individual Category */
+.category {
+  position: relative;
+  cursor: pointer;
   font-size: 18px;
   font-weight: bold;
-  color: #dd37ef;
-}
-
-.rating {
-  font-size: 16px;
-  color: #171615;
-}
-
-/* Add to Cart Button */
-.men-product-card button {
-  background: #f185ea;
-  color: white;
-  border: none;
+  color: #dd66f2;
   padding: 10px 15px;
-  cursor: pointer;
   border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.category:hover {
+  color: #d272d2;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 180px;
+  z-index: 10;
+  padding: 5px 0;
+}
+
+/* Show Dropdown on Hover */
+.category:hover .dropdown {
+  display: block;
+}
+
+/* Dropdown Items */
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown li {
+  padding: 10px;
   font-size: 16px;
+  text-align: left;
+  cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.men-product-card button:hover {
-  background: #cf52ef;
+.dropdown li:hover {
+  background: #f4f4f4;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .men-products {
-    flex-direction: column;
-    align-items: center;
-  }
+.women-page img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
-  .men-product-card {
-    width: 90%;
-  }
+/* Product Grid */
+.women-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Product Card */
+.women-product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.women-product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Product Details */
+.women-product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #444;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #e60023;
+}
+
+.rating {
+  font-size: 14px;
+  color: #ff9800;
+}
+
+/* Add to Cart Button */
+.women-product-card button {
+  background: #e60023;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.women-product-card button:hover {
+  background: #c7001e;
 }

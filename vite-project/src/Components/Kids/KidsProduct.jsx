@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Kidsproduct.css";
 
 const KidsProducts = [
@@ -91,18 +91,41 @@ const KidsProducts = [
 const Kidspage = () => {
   const [cart, setCart] = useState([]);
 
+  // Load cart from localStorage when component mounts
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      existingCart[existingProductIndex].quantity += 1;
+    } else {
+      existingCart.push({ ...product, quantity: 1 });
+    }
+
+    setCart([...existingCart]);
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
     alert(`${product.name} added to cart! 🛒`);
   };
 
   return (
     <div className="men-page">
+      <h2>Kid's Collection</h2>
       <img
         src="https://img.freepik.com/free-vector/hand-drawn-kids-toys-sale-banner_23-2149651210.jpg"
         alt=""
       />
-      <h2>Kid's Collection</h2>
+      <h2>Products</h2>
 
       <div className="men-products">
         {KidsProducts.map((product) => (

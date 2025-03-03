@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../Styling/LoginSignup.css";
 import Footer from "../Components/Footer/Footer";
-
+import { useNavigate } from "react-router-dom";
 const LoginSignup = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -69,8 +70,19 @@ const LoginSignup = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      setErrors({});
+      // setErrors({});
       alert(isLogin ? "Login Successful!" : "Signup Successful!");
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          contact: formData.contact,
+        })
+      );
+      localStorage.getItem("user");
+      navigate("../../src/App.jsx");
+      window.location.href = "/";
     }
   };
 

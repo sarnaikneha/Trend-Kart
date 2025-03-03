@@ -1,44 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Styling/Cart.css";
 
 const Cart = () => {
-  // Sample cart items (You can replace this with actual data)
-  const [cart, setCart] = useState([
-    {
-      id: 1,
-      name: "Men's Jacket",
-      price: 1999,
-      quantity: 1,
-      image:
-        "https://m.media-amazon.com/images/I/71aaxjpDVhL._AC_UL480_FMwebp_QL65_.jpg",
-    },
-    {
-      id: 2,
-      name: "Women's Handbag",
-      price: 1499,
-      quantity: 1,
-      image:
-        "https://m.media-amazon.com/images/I/51sLex9cbWL._AC_UL480_FMwebp_QL65_.jpg",
-    },
-  ]);
+  // Load cart data from localStorage
+  const [cart, setCart] = useState([]);
 
-  // Function to update quantity
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
+  // Function to update quantity and save to localStorage
   const updateQuantity = (id, newQuantity) => {
-    setCart(
-      cart.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(1, newQuantity) } : item
-      )
+    const updatedCart = cart.map((item) =>
+      item.id === id ? { ...item, quantity: Math.max(1, newQuantity) } : item
     );
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   // Function to remove item
   const removeFromCart = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   // Function to clear cart
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart");
   };
 
   // Calculate Total Price
@@ -58,21 +51,27 @@ const Cart = () => {
           <div className="cart-items">
             {cart.map((item) => (
               <div key={item.id} className="cart-item">
-                <img src={item.image} alt={item.name} />
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="cart-item-img"
+                />
                 <div className="cart-info">
                   <h3>{item.name}</h3>
-                  <p>₹{item.price}</p>
+                  <p>₹{item.price.toFixed(2)}</p>
                   <div className="quantity-controls">
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     >
-                      -
+                      {" "}
+                      -{" "}
                     </button>
                     <span>{item.quantity}</span>
                     <button
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                     >
-                      +
+                      {" "}
+                      +{" "}
                     </button>
                   </div>
                   <button

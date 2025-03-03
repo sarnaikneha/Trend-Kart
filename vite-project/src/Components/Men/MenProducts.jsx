@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./MenProduct.css";
 
 // Sample Men’s Products Data
@@ -99,21 +99,91 @@ const menProducts = [
   },
 ];
 
-const MenPage = () => {
+const Menpage = () => {
   const [cart, setCart] = useState([]);
 
+  // Load cart from localStorage when component mounts
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.id === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      existingCart[existingProductIndex].quantity += 1;
+    } else {
+      existingCart.push({ ...product, quantity: 1 });
+    }
+
+    setCart([...existingCart]);
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
     alert(`${product.name} added to cart! 🛒`);
   };
 
   return (
     <div className="men-page">
+      <div className="title">
+        <h2>Men's Collection</h2>
+        <div className="category-list">
+          <div className="category">
+            western
+            <div className="dropdown">
+              <ul>
+                <li>Dresses</li>
+                <li>t-shirt</li>
+                <li>Jeans & Trousers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Beauty & Health ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Skincare</li>
+                <li>Haircare</li>
+                <li>bodycare</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Accessories ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Cap</li>
+                <li>Belt</li>
+                <li>Bracelets</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Bags & Footwear ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Colllegebags</li>
+                <li>Sneakers</li>
+                <li>Sandals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <img
-        src="https://img.freepik.com/free-psd/fashion-sale-banner-template_23-2148939458.jpg"
-        alt=""
+        src="https://www.shutterstock.com/image-photo/banner-mans-hand-clothes-on-260nw-2156332305.jpg"
+        alt="Banner"
       />
-      <h2>Men's Collection</h2>
+      <h2>Products</h2>
 
       <div className="men-products">
         {menProducts.map((product) => (
@@ -134,4 +204,4 @@ const MenPage = () => {
   );
 };
 
-export default MenPage;
+export default Menpage;

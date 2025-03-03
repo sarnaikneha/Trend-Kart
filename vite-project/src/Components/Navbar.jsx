@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
+  let getUser = localStorage.getItem("user");
+  console.log(getUser, typeof getUser);
+  getUser = JSON.parse(getUser);
+  console.log(getUser, typeof getUser);
+  let name = getUser ? getUser?.fullName : "login";
+  console.log(name);
+
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -63,7 +70,7 @@ export const Navbar = () => {
         </ul>
         <div className="nav-login-cart">
           <Link to="/login">
-            <button>Login</button>
+            <button>{name}</button>
           </Link>
           <Link to="/cart">
             {" "}
