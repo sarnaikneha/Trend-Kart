@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../Styling/LoginSignup.css";
 import Footer from "../Components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+
 const LoginSignup = () => {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
+  const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -15,39 +17,39 @@ const LoginSignup = () => {
 
   const [errors, setErrors] = useState({});
 
-  // Function to handle input change
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, []);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Email Validation Function
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  // Contact Number Validation Function
   const validateContact = (contact) => {
-    return /^\d{10}$/.test(contact); // Accepts only 10-digit numbers
+    return /^\d{10}$/.test(contact);
   };
 
-  // Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
     let newErrors = {};
 
-    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
       newErrors.email = "Enter a valid email address";
     }
 
-    // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
     }
 
-    // If Sign-Up, validate additional fields
     if (!isLogin) {
       if (!formData.fullName) {
         newErrors.fullName = "Full Name is required";
@@ -66,28 +68,44 @@ const LoginSignup = () => {
       }
     }
 
-    // Set errors if any, otherwise proceed
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // setErrors({});
       alert(isLogin ? "Login Successful!" : "Signup Successful!");
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          fullName: formData.fullName,
-          email: formData.email,
-          contact: formData.contact,
-        })
-      );
-      localStorage.getItem("user");
-      navigate("../../src/App.jsx");
-      window.location.href = "/";
+      const userData = {
+        fullName: formData.fullName,
+        email: formData.email,
+        contact: formData.contact,
+      };
+      localStorage.setItem("user", JSON.stringify(userData));
+      setUser(userData);
+      navigate("/");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
   };
 
   return (
     <div>
+      <nav className="navbar">
+        <h1>TrandKart</h1>
+        {user ? (
+          <div>
+            <span>Welcome, {user.fullName}</span>
+            <button onClick={handleLogout} className="logout-btn">
+              Logout
+            </button>
+          </div>
+        ) : (
+          <button onClick={() => setIsLogin(true)} className="login-btn">
+            Login
+          </button>
+        )}
+      </nav>
+
       <div className="container">
         <div className="form-box">
           <h2 className="title">
