@@ -88,7 +88,7 @@ const KidsProducts = [
   },
 ];
 
-const Kidspage = () => {
+const KidsPage = () => {
   const [cart, setCart] = useState([]);
 
   // Load cart from localStorage when component mounts
@@ -119,17 +119,64 @@ const Kidspage = () => {
   };
 
   return (
-    <div className="men-page">
-      <h2>Kid's Collection</h2>
+    <div className="kids-page">
+      <div className="title">
+        <h2>Kid's Collection</h2>
+        <div className="category-list">
+          <div className="category">
+            western
+            <div className="dropdown">
+              <ul>
+                <li>Dresses</li>
+                <li>Tops</li>
+                <li>Jeans & Trousers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Beauty & Health ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Skincare</li>
+                <li>Haircare</li>
+                <li>Makeup</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Jewelry & Accessories ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Earrings</li>
+                <li>Necklaces</li>
+                <li>Bracelets</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="category">
+            Bags & Footwear ⬇
+            <div className="dropdown">
+              <ul>
+                <li>Handbags</li>
+                <li>Sneakers</li>
+                <li>Sandals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <img
         src="https://img.freepik.com/free-vector/hand-drawn-kids-toys-sale-banner_23-2149651210.jpg"
         alt=""
       />
-      <h2>Products</h2>
+      <h2>Kid's Collection</h2>
 
-      <div className="men-products">
+      <div className="kids-products">
         {KidsProducts.map((product) => (
-          <div key={product.id} className="men-product-card">
+          <div key={product.id} className="kids-product-card">
             <img
               src={product.image}
               alt={product.name}
@@ -146,4 +193,4 @@ const Kidspage = () => {
   );
 };
 
-export default Kidspage;
+export default KidsPage;

@@ -1,11 +1,11 @@
 import React from "react";
-import MenProducts from "./MenProducts";
+import MenProduct from "./MenProduct";
 
-const Men = () => {
+const Kids = () => {
   return (
     <div>
-      <MenProducts />
+      <MenProduct />
     </div>
   );
 };
-export default Men;
+export default Kids;

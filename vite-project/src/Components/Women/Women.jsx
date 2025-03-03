@@ -1,11 +1,11 @@
 import React from "react";
 import WomenPro from "./WomenPro";
 
-const Women = () => {
+const Kids = () => {
   return (
     <div>
       <WomenPro />
     </div>
   );
 };
-export default Women;
+export default Kids;

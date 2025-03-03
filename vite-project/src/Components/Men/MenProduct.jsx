@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./MenProduct.css";
 
 // Sample Men’s Products Data
-const menProducts = [
+const MenProducts = [
   {
     id: 1,
     name: "Men's Casual Shirt",
@@ -99,7 +99,7 @@ const menProducts = [
   },
 ];
 
-const Menpage = () => {
+const MenPage = () => {
   const [cart, setCart] = useState([]);
 
   // Load cart from localStorage when component mounts
@@ -139,7 +139,7 @@ const Menpage = () => {
             <div className="dropdown">
               <ul>
                 <li>Dresses</li>
-                <li>t-shirt</li>
+                <li>T-shirt</li>
                 <li>Jeans & Trousers</li>
               </ul>
             </div>
@@ -151,17 +151,17 @@ const Menpage = () => {
               <ul>
                 <li>Skincare</li>
                 <li>Haircare</li>
-                <li>bodycare</li>
+                <li>Makeup</li>
               </ul>
             </div>
           </div>
 
           <div className="category">
-            Accessories ⬇
+            Jewelry & Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li>Cap</li>
-                <li>Belt</li>
+                <li>Earrings</li>
+                <li>Necklaces</li>
                 <li>Bracelets</li>
               </ul>
             </div>
@@ -171,7 +171,7 @@ const Menpage = () => {
             Bags & Footwear ⬇
             <div className="dropdown">
               <ul>
-                <li>Colllegebags</li>
+                <li>Handbags</li>
                 <li>Sneakers</li>
                 <li>Sandals</li>
               </ul>
@@ -186,7 +186,7 @@ const Menpage = () => {
       <h2>Products</h2>
 
       <div className="men-products">
-        {menProducts.map((product) => (
+        {MenProducts.map((product) => (
           <div key={product.id} className="men-product-card">
             <img
               src={product.image}
@@ -204,4 +204,4 @@ const Menpage = () => {
   );
 };
 
-export default Menpage;
+export default MenPage;

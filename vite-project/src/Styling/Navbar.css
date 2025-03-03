@@ -124,3 +124,10 @@ body {
     gap: 10px; /* Reduce spacing on small screens */
   }
 }
+.search-bar {
+  width: 250px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}

@@ -1,33 +1,36 @@
 /* MenPro.css */
 /* Men's Page Styling */
-/* Apply Globally to Prevent Horizontal Scrolling */
+/* Prevent Horizontal Scrolling */
 html,
 body {
-  max-width: 100%;
   overflow-x: hidden;
+  width: 100%;
   margin: 0;
   padding: 0;
-  margin-top: 10px;
+  background-color: #f2eef3;
 }
 
-/* Men Page Styling */
+/* Kids' Page Styling */
 .men-page {
   text-align: center;
   padding: 20px;
+  margin-top: 30px;
   font-family: Arial, sans-serif;
-  background-color: #c8e0f2; /* Light blue background */
-  width: 100%; /* Use 100% instead of 100vw */
-  box-sizing: border-box; /* Ensures padding doesn’t cause overflow */
+
+  width: 100vw; /* Full width */
+  max-width: 100%; /* Prevents overflow */
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Heading Styling */
 .men-page h2 {
   color: #333;
-  font-size: 28px;
-  margin-right: -50px;
+  margin-right: 10px;
   width: 100vw;
-  background-color: #d456f7; /* Darker blue */
-  padding: 10px;
+  font-size: 28px;
+  margin-bottom: 2px;
+  background-color: #ed92f2;
 }
 
 /* Category List */
@@ -35,7 +38,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -45,14 +48,14 @@ body {
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
-  color: #66a3f2;
+  color: #eb79f1;
   padding: 10px 15px;
   border-radius: 5px;
   transition: color 0.3s ease;
 }
 
 .category:hover {
-  color: #4d8de0;
+  color: #dc4de6;
 }
 
 /* Dropdown Menu */
@@ -94,8 +97,9 @@ body {
 }
 
 .men-page img {
-  max-width: 80%;
-  height: auto;
+  width: 90%;
+  height: 300px;
+  border: 1 px solid rgb(247, 245, 245);
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -103,31 +107,10 @@ body {
 /* Product Grid */
 .men-products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
   justify-content: center;
   padding: 20px;
-  width: 100vw;
-  margin: 0 auto;
-}
-
-/* Responsive Grid - Adjust for Smaller Screens */
-@media (max-width: 1024px) {
-  .men-products {
-    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  }
-}
-
-@media (max-width: 768px) {
-  .men-products {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-  }
-}
-
-@media (max-width: 480px) {
-  .men-products {
-    grid-template-columns: repeat(1, 1fr); /* 1 item per row */
-  }
 }
 
 /* Product Card */
@@ -144,19 +127,46 @@ body {
   transform: scale(1.05);
 }
 
-/* Product Image */
 .product-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 220px; /* Set a fixed height */
+  object-fit: cover; /* Ensures images fill the space without distortion */
   border-radius: 10px;
 }
 
 /* Product Details */
-.men-product-card h3 {
-  font-size: 18px;
-  margin: 10px 0;
+.men-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 15px;
+  text-align: center;
+  min-height: 350px; /* Set a minimum height to keep cards uniform */
+}
+
+.men-product-card button {
+  width: 100%; /* Make all buttons the same width */
+  margin-top: auto; /* Push button to the bottom */
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure full width */
+  padding: 5px 0;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  flex: 1; /* Ensures the text distributes evenly */
+  text-align: left;
   color: #444;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds "..." for long text */
 }
 
 .price {
@@ -172,7 +182,7 @@ body {
 
 /* Add to Cart Button */
 .men-product-card button {
-  background: #e60023;
+  background: #f265f5;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -183,5 +193,5 @@ body {
 }
 
 .men-product-card button:hover {
-  background: #c7001e;
+  background: #f150ee;
 }
