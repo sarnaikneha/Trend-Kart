@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../Styling/Cart.css";
 
 const Cart = () => {
-  // Load cart data from localStorage
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -12,7 +11,6 @@ const Cart = () => {
     }
   }, []);
 
-  // Function to update quantity and save to localStorage
   const updateQuantity = (id, newQuantity) => {
     const updatedCart = cart.map((item) =>
       item.id === id ? { ...item, quantity: Math.max(1, newQuantity) } : item
@@ -21,21 +19,18 @@ const Cart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Function to remove item
   const removeFromCart = (id) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     window.location.reload();
-    };
+  };
 
-  // Function to clear cart
   const clearCart = () => {
     setCart([]);
     localStorage.removeItem("cart");
   };
 
-  // Calculate Total Price
   const totalPrice = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0

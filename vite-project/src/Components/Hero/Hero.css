@@ -3,16 +3,33 @@
   padding: 20px;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100%;
+  overflow-y: visible;
+  margin: 0;
+  padding: 0;
+}
+.text {
+  margin-bottom: 30px;
+  height: 100px;
+  width: 95vw;
+}
 .hero-title {
   font-size: 30px;
   font-weight: bold;
   color: #333;
-  margin-top: 80px;
-  background-color: #cd7aed;
+  text-align: justify;
+  display: inline-block; /* Ensures proper positioning */
+  text-align: center;
+  width: 100vw;
+  height: 50px;
+  margin-top: 50px;
+  background-color: #cc8ee4;
 }
 
 .blink-text {
-  color: rgb(250, 13, 13);
+  color: rgb(243, 13, 55);
   animation: blink 1s infinite alternate;
 }
 
@@ -33,9 +50,9 @@
 .hero-image {
   width: 90%;
   height: 30vw;
-  object-fit: cover; /* Ensures the image covers the container */
+  object-fit: cover;
   border: solid 2px rgb(183, 23, 247);
-  border-radius: 10px; /* Smooth rounded corners */
+  border-radius: 10px;
   transition: opacity 2s ease-in-out;
 }
 
@@ -71,7 +88,7 @@
 }
 
 .hero-button button {
-  background-color: #ff4500;
+  background-color: #de65f6;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -79,7 +96,7 @@
 }
 
 .hero-button button:hover {
-  background-color: #ff6347;
+  background-color: #c929ed;
 }
 
 .hero-video {
@@ -95,16 +112,37 @@
 }
 
 .hero-video video {
-  width: 85%; /* Responsive width */
-  max-width: 800px; /* Prevents the video from being too large */
+  width: 85%;
+  max-width: 800px;
+  margin-top: 60px;
   height: auto;
-  border-radius: 15px; /* Rounded corners for a smooth look */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow effect */
-  border: 3px solid #b717f7; /* Stylish purple border */
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid #b717f7;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .hero-video video:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+  transform: scale(1.05);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+}
+.last {
+  display: flex;
+}
+.lastdiv {
+  max-width: 400px;
+  margin-top: 100px;
+}
+
+.shop-now {
+  background-color: #de65f6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.shop-now:hover {
+  transform: scale(1.05);
+  background-color: #b717f7;
 }

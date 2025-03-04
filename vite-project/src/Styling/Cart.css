@@ -45,7 +45,7 @@
 }
 
 .remove-btn {
-  background: red;
+  background: rgb(220, 121, 240);
   color: white;
   border: none;
   padding: 6px 12px;
@@ -54,7 +54,7 @@
 }
 
 .remove-btn:hover {
-  background: darkred;
+  background: rgb(228, 62, 237);
 }
 
 .cart-summary {
@@ -64,7 +64,7 @@
 
 .clear-cart,
 .checkout {
-  background: #28a745;
+  background: #6ff18d;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -73,9 +73,9 @@
 }
 
 .clear-cart {
-  background: red;
+  background: rgb(209, 109, 229);
 }
 
 .clear-cart:hover {
-  background: darkred;
+  background: rgb(193, 71, 238);
 }

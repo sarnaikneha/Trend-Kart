@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./MenProduct.css";
-import {menProducts} from "../../Components/common/staticCommonData"
-import {addToCart} from "../../Components/common/commonComponent"
-
+import { menProducts } from "../../Components/common/staticCommonData";
+import { addToCart } from "../../Components/common/commonComponent";
 
 const MenPage = () => {
   const [cart, setCart] = useState([]);
 
-  // Load cart from localStorage when component mounts
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -42,11 +40,11 @@ const MenPage = () => {
           </div>
 
           <div className="category">
-            Jewelry & Accessories ⬇
+            Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li>Earrings</li>
-                <li>Necklaces</li>
+                <li>Gym instrument</li>
+                <li>Watches</li>
                 <li>Bracelets</li>
               </ul>
             </div>

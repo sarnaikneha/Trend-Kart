@@ -10,8 +10,8 @@ export const Navbar = () => {
   let getUser = localStorage.getItem("user");
   getUser = JSON.parse(getUser);
   let name = getUser ? getUser?.fullName : "Login";
-   const cartCount = JSON.parse(localStorage.getItem('cart') || []).length
-   console.log('cartCount',cartCount)
+  const cartCount = JSON.parse(localStorage.getItem("cart") || []).length;
+  console.log("cartCount", cartCount);
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -22,10 +22,8 @@ export const Navbar = () => {
           style={{ width: "50px", height: "auto" }}
         />
 
-        {/* ✅ TRENDKART Title */}
         <p className="brand-name">TRENDKART</p>
 
-        {/* ✅ Search Bar Below TRENDKART */}
         <input
           type="text"
           className="search-bar"

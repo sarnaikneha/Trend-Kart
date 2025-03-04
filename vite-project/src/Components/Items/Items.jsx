@@ -12,7 +12,6 @@ const itemsData = [
   { id: 4, img: img4, name: "Kurti", price: "₹1300", rating: 4.2 },
 ];
 
-// Function to render star ratings
 const getStars = (rating) => {
   const fullStars = Math.floor(rating);
   const halfStar = rating % 1 !== 0 ? "⭐" : "";

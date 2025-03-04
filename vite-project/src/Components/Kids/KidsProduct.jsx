@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Kidsproduct.css";
-import {kidsProducts} from "../../Components/common/staticCommonData"
-import {addToCart} from "../../Components/common/commonComponent"
+import { kidsProducts } from "../../Components/common/staticCommonData";
+import { addToCart } from "../../Components/common/commonComponent";
 
 const KidsPage = () => {
   const [cart, setCart] = useState([]);
@@ -41,12 +41,12 @@ const KidsPage = () => {
           </div>
 
           <div className="category">
-            Jewelry & Accessories ⬇
+            Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li>Earrings</li>
-                <li>Necklaces</li>
-                <li>Bracelets</li>
+                <li>paying tools</li>
+                <li>bagss</li>
+                <li>toys</li>
               </ul>
             </div>
           </div>

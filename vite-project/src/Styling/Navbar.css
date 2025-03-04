@@ -1,20 +1,19 @@
 /* Navbar Container */
 .navbar {
-  position: fixed; /* ✅ Navbar stays at the top */
+  position: fixed;
   top: 0;
   left: 0;
-  height: 60px; /* ✅ Slightly increased height */
+  height: 60px;
   width: 100%;
   background-color: #f2e1f4;
-  padding: 0 40px; /* ✅ More padding for spacing */
+  padding: 0 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between; /* ✅ Evenly distribute left, middle, right */
+  justify-content: space-between;
   align-items: center;
   z-index: 1000;
 }
 
-/* Prevent content from hiding behind navbar */
 body {
   padding-top: 60px; /* ✅ Matches navbar height */
 }
@@ -128,6 +127,6 @@ body {
   width: 250px;
   padding: 8px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #d52feb;
   outline: none;
 }

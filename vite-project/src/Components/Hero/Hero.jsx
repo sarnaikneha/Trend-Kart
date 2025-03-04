@@ -26,10 +26,12 @@ const Hero = () => {
   return (
     <div className="hero-container">
       {/* Title Above the Image */}
-      <h1 className="hero-title">
-        Get up to 20% cashback + Free Delivery on{" "}
-        <span className="blink-text">First Order</span>
-      </h1>
+      <div className="text">
+        <h1 className="hero-title">
+          Get up to 20% cashback + Free Delivery on{" "}
+          <span className="blink-text">First Order</span>
+        </h1>
+      </div>
 
       {/* Slideshow Effect */}
       <div className="hero-image-wrapper">
@@ -63,14 +65,24 @@ const Hero = () => {
       </div>
 
       {/* Video Section */}
-      <div className="hero-video">
-        <video controls autoPlay loop muted>
-          <source
-            src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Bo-ziHq_jlbqx8330/videoblocks-sell16_bf6eitlb3__2de05e0e4d9479db30a1bf08385a1810__P360.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+      <div className="last">
+        <div className="lastdiv">
+          {" "}
+          <h2>Exclusive Offer!</h2>
+          <p>Get up to 50% off on your first purchase. Limited time offer.</p>
+          <button className="shop-now">Shop Now</button>
+        </div>
+        <div>
+          <div className="hero-video">
+            <video controls autoPlay loop muted>
+              <source
+                src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Bo-ziHq_jlbqx8330/videoblocks-sell16_bf6eitlb3__2de05e0e4d9479db30a1bf08385a1810__P360.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,39 +1,31 @@
-/* MenPro.css */
-/* Men's Page Styling */
-/* Prevent Horizontal Scrolling */
-html,
 body {
   overflow-x: hidden;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #f2eef3;
 }
 
-/* Kids' Page Styling */
 .men-page {
   text-align: center;
   padding: 20px;
   margin-top: 30px;
   font-family: Arial, sans-serif;
 
-  width: 100vw; /* Full width */
-  max-width: 100%; /* Prevents overflow */
+  width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
 }
 
-/* Heading Styling */
 .men-page h2 {
   color: #333;
   margin-right: 10px;
   width: 100vw;
   font-size: 28px;
   margin-bottom: 2px;
-  background-color: #ed92f2;
+  background-color: #cc8ee4;
 }
 
-/* Category List */
 .category-list {
   display: flex;
   justify-content: center;
@@ -42,7 +34,6 @@ body {
   position: relative;
 }
 
-/* Individual Category */
 .category {
   position: relative;
   cursor: pointer;
@@ -58,7 +49,6 @@ body {
   color: #dc4de6;
 }
 
-/* Dropdown Menu */
 .dropdown {
   display: none;
   position: absolute;
@@ -72,12 +62,10 @@ body {
   padding: 5px 0;
 }
 
-/* Show Dropdown on Hover */
 .category:hover .dropdown {
   display: block;
 }
 
-/* Dropdown Items */
 .dropdown ul {
   list-style: none;
   padding: 0;
@@ -104,7 +92,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Product Grid */
 .men-products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -113,7 +100,6 @@ body {
   padding: 20px;
 }
 
-/* Product Card */
 .men-product-card {
   background: #fff;
   border-radius: 10px;
@@ -129,12 +115,11 @@ body {
 
 .product-image {
   width: 100%;
-  height: 220px; /* Set a fixed height */
-  object-fit: cover; /* Ensures images fill the space without distortion */
+  height: 220px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
-/* Product Details */
 .men-product-card {
   display: flex;
   flex-direction: column;
@@ -143,36 +128,36 @@ body {
   height: 100%;
   padding: 15px;
   text-align: center;
-  min-height: 350px; /* Set a minimum height to keep cards uniform */
+  min-height: 350px;
 }
 
 .men-product-card button {
-  width: 100%; /* Make all buttons the same width */
-  margin-top: auto; /* Push button to the bottom */
+  width: 100%;
+  margin-top: auto;
 }
 
 .product-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   padding: 5px 0;
 }
 
 .product-info h3 {
   font-size: 16px;
-  flex: 1; /* Ensures the text distributes evenly */
+  flex: 1;
   text-align: left;
   color: #444;
-  white-space: nowrap; /* Prevent text from wrapping */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Adds "..." for long text */
+  text-overflow: ellipsis;
 }
 
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #e60023;
+  color: #d930f7;
 }
 
 .rating {
@@ -180,7 +165,6 @@ body {
   color: #ff9800;
 }
 
-/* Add to Cart Button */
 .men-product-card button {
   background: #f265f5;
   color: white;

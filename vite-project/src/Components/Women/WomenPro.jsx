@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./WomenPro.css";
-import {womenProducts} from "../../Components/common/staticCommonData"
-import {addToCart} from "../../Components/common/commonComponent"
+import { womenProducts } from "../../Components/common/staticCommonData";
+import { addToCart } from "../../Components/common/commonComponent";
 
 const WomenPage = () => {
   const [cart, setCart] = useState([]);
-  // Load cart from localStorage when component mounts
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
