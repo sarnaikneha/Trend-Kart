@@ -81,7 +81,6 @@ const Cart = () => {
             ))}
           </div>
 
-          {/* Cart Summary */}
           <div className="cart-summary">
             <h3>Total: ₹{totalPrice.toFixed(2)}</h3>
             <button className="clear-cart" onClick={clearCart}>

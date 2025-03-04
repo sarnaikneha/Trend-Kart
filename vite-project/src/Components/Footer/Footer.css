@@ -4,7 +4,7 @@
   padding: 40px 10%;
   width: 82vw;
 }
-/* Error Message Styling */
+
 .error-message {
   color: #ff4d4d;
   font-size: 0.9rem;
@@ -22,7 +22,6 @@
   margin-bottom: 15px;
 }
 
-/* Subscription Box */
 .subscribe-box {
   display: flex;
   justify-content: center;
@@ -55,7 +54,6 @@
   transform: scale(1.05);
 }
 
-/* Social Media Icons */
 .social-icons {
   display: flex;
   justify-content: center;
@@ -64,7 +62,7 @@
 }
 
 .social-icons img {
-  width: 30px; /* Small size */
+  width: 30px;
   height: 30px;
   transition: transform 0.3s ease-in-out;
 }
@@ -73,7 +71,6 @@
   transform: scale(1.2);
 }
 
-/* Company Info */
 .company-info {
   font-size: 0.9rem;
 }
@@ -87,7 +84,7 @@
 .company-info a:hover {
   text-decoration: underline;
 }
-/* Go to Top Button */
+
 .go-to-top {
   background-color: #eba4f4;
   color: rgb(60, 59, 59);

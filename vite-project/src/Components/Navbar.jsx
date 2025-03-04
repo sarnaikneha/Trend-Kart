@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "../Styling/Navbar.css"; // Ensure correct file path
-import logo from "../assets/logo.png"; // ✅ Import images
-import shopingcart from "../assets/shoppingcart.png"; // ✅ Import images
+import "../Styling/Navbar.css";
+import logo from "../assets/logo.png";
+import shopingcart from "../assets/shoppingcart.png";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
-  const [searchQuery, setSearchQuery] = useState(""); // ✅ State for search input
+  const [searchQuery, setSearchQuery] = useState("");
   let getUser = localStorage.getItem("user");
   getUser = JSON.parse(getUser);
   let name = getUser ? getUser?.fullName : "Login";
@@ -33,7 +33,6 @@ export const Navbar = () => {
         />
       </div>
 
-      {/* ✅ Navigation Menu */}
       <ul className="nav-menu">
         <li onClick={() => setMenu("Shop")}>
           <Link to="/" className="nav-link">
@@ -61,7 +60,6 @@ export const Navbar = () => {
         </li>
       </ul>
 
-      {/* ✅ Login & Cart Section */}
       <div className="nav-login-cart">
         <Link to="/login">
           <button className="login-button">{name}</button>

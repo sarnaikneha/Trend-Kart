@@ -15,36 +15,36 @@
 }
 
 body {
-  padding-top: 60px; /* ✅ Matches navbar height */
+  padding-top: 60px; 
 }
 
 /* Left Section: Logo */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px; /* ✅ Space between logo and text */
-  flex: 1; /* ✅ Allocates equal space */
+  gap: 10px; 
+  flex: 1; 
 }
 
 .logo-img {
-  width: 45px; /* ✅ Adjust size */
+  width: 45px; 
   height: auto;
 }
 
 .nav-logo p {
-  font-family: "Poppins", sans-serif; /* ✅ Stylish font */
-  font-size: 24px; /* ✅ Large size */
+  font-family: "Poppins", sans-serif; 
+  font-size: 24px; 
   font-weight: 700;
   color: #9504f5;
 }
 
-/* Middle Section: Navigation Menu */
+
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 25px; /* ✅ Even spacing */
-  flex: 6; /* ✅ Allocates more space for the menu */
-  justify-content: center; /* ✅ Centers the menu */
+  gap: 25px; 
+  flex: 6; 
+  justify-content: center; 
   padding: 0;
 }
 .nav-menu hr {
@@ -67,14 +67,14 @@ body {
   color: #b335d9;
 }
 
-/* Right Section: Login & Cart */
+
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 15px; /* ✅ Space between login button and cart icon */
-  flex: 1; /* ✅ Allocates equal space */
+  gap: 15px; 
+  flex: 1; 
   justify-content: flex-end;
-  margin-right: 100px; /* ✅ Aligns items to the right */
+  margin-right: 100px;
 }
 
 .nav-login-cart button {
@@ -114,13 +114,13 @@ body {
   color: rgb(244, 243, 243);
 }
 
-/* ✅ Responsive Design */
+
 @media screen and (max-width: 768px) {
   .nav-menu {
-    display: none; /* Hide menu on small screens */
+    display: none; 
   }
   .nav-login-cart {
-    gap: 10px; /* Reduce spacing on small screens */
+    gap: 10px; /
   }
 }
 .search-bar {

@@ -3,7 +3,6 @@ import "./Hero.css";
 import arrow_icon from "../../assets/arrow_icon.png";
 import women_shop from "../../assets/women_shop.jpg";
 
-// Hero Images for Slideshow
 const heroImages = [
   "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/SPB_1500x400._CB544017564_.jpg",
   "https://img.freepik.com/premium-psd/banner-template-online-fashion-sale_23-2148585403.jpg",
@@ -14,18 +13,16 @@ const heroImages = [
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Slideshow Effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="hero-container">
-      {/* Title Above the Image */}
       <div className="text">
         <h1 className="hero-title">
           Get up to 20% cashback + Free Delivery on{" "}
@@ -33,7 +30,6 @@ const Hero = () => {
         </h1>
       </div>
 
-      {/* Slideshow Effect */}
       <div className="hero-image-wrapper">
         <img
           src={heroImages[currentIndex]}
@@ -42,7 +38,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Hero Section */}
       <div className="hero">
         <div className="hero-left">
           <h2>NEW ARRIVAL </h2>
@@ -64,7 +59,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Video Section */}
       <div className="last">
         <div className="lastdiv">
           {" "}

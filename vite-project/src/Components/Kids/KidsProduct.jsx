@@ -5,7 +5,7 @@ import { addToCart } from "../../Components/common/commonComponent";
 
 const KidsPage = () => {
   const [cart, setCart] = useState([]);
-  // Load cart from localStorage when component mounts
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
