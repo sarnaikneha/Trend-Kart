@@ -26,7 +26,8 @@ const Cart = () => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
+    window.location.reload();
+    };
 
   // Function to clear cart
   const clearCart = () => {

@@ -10,7 +10,8 @@ export const Navbar = () => {
   let getUser = localStorage.getItem("user");
   getUser = JSON.parse(getUser);
   let name = getUser ? getUser?.fullName : "Login";
-
+   const cartCount = JSON.parse(localStorage.getItem('cart') || []).length
+   console.log('cartCount',cartCount)
   return (
     <div className="navbar">
       <div className="nav-logo">
@@ -75,7 +76,7 @@ export const Navbar = () => {
             style={{ width: "30px", height: "auto" }}
           />
         </Link>
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{cartCount}</div>
       </div>
     </div>
   );
