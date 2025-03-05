@@ -8,9 +8,9 @@ export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   const [searchQuery, setSearchQuery] = useState("");
   let getUser = localStorage.getItem("user");
-  getUser = JSON.parse(getUser);
-  let name = getUser ? getUser?.fullName : "Login";
-  const cartCount = JSON.parse(localStorage.getItem("cart") || []).length;
+  getUser = getUser ? JSON.parse(getUser) : undefined;
+  let name = getUser?.fullName || "Login";
+  const cartCount = JSON.parse(localStorage.getItem("cart") || "[]").length;
   console.log("cartCount", cartCount);
   return (
     <div className="navbar">
