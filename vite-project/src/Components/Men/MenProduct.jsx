@@ -63,7 +63,7 @@ const MenPage = () => {
         </div>
       </div>
       <img
-        src="https://www.shutterstock.com/image-photo/banner-mans-hand-clothes-on-260nw-2156332305.jpg"
+        src="https://tipsmake.com/data/images/collection-of-the-most-beautiful-fashion-banners-picture-32-8h2n0YQtr.jpg"
         alt="Banner"
       />
       <h2>Products</h2>

@@ -1,5 +1,5 @@
 import React from "react";
-import img5 from "../../assets/img5.jpeg";
+
 import "./Popular.css";
 
 const Popular = () => {
@@ -12,7 +12,12 @@ const Popular = () => {
         <button>Check Now</button>
       </div>
       <div className="right">
-        <img src={img5} alt="" />
+        <img
+          src={
+            "https://t3.ftcdn.net/jpg/05/33/69/68/360_F_533696861_3JSZjCkdWZpXh91gd2gR3X3FJIMzISFX.jpg"
+          }
+          alt=""
+        />
       </div>
     </div>
   );

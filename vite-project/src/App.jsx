@@ -4,11 +4,14 @@ import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 
 import Cart from "./Pages/Cart";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginSignup from "./Pages/LoginSignup";
 import Footer from "./Components/Footer/Footer";
 import ShopCategoryW from "./Pages/ShopCategoryW";
 import ShopCategoryK from "./Pages/ShopCategoryK";
+import Payment from "./Pages/Payment";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
   return (
@@ -24,7 +27,9 @@ function App() {
           <Route />
           <Route path="/cart" element={<Cart />} />
 
+          <Route path="/payment" element={<Payment />} />
           <Route path="login" element={<LoginSignup />} />
+          <Route path="profile" element={<Profile />} />
           <Route path="Footer" element={<Footer />} />
         </Routes>
       </BrowserRouter>

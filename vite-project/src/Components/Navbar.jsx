@@ -11,16 +11,19 @@ export const Navbar = () => {
   getUser = getUser ? JSON.parse(getUser) : undefined;
   let name = getUser?.fullName || "Login";
   const cartCount = JSON.parse(localStorage.getItem("cart") || "[]").length;
-  console.log("cartCount", cartCount);
+
   return (
     <div className="navbar">
       <div className="nav-logo">
-        <img
-          src={logo}
-          alt="Logo"
-          className="logo-img"
-          style={{ width: "50px", height: "auto" }}
-        />
+        {/* Wrap the logo inside Link to navigate to Shop */}
+        <Link to="/" onClick={() => setMenu("Shop")}>
+          <img
+            src={logo}
+            alt="Logo"
+            className="logo-img"
+            style={{ width: "50px", height: "auto", cursor: "pointer" }}
+          />
+        </Link>
 
         <p className="brand-name">TRENDKART</p>
 

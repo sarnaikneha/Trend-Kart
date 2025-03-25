@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Styling/Cart.css";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -23,7 +25,6 @@ const Cart = () => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-    window.location.reload();
   };
 
   const clearCart = () => {
@@ -35,6 +36,10 @@ const Cart = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+
+  const proceedToCheckout = () => {
+    navigate("/payment", { state: { totalAmount: totalPrice } });
+  };
 
   return (
     <div className="cart-page">
@@ -55,26 +60,25 @@ const Cart = () => {
                 <div className="cart-info">
                   <h3>{item.name}</h3>
                   <p>₹{item.price.toFixed(2)}</p>
-                  <div className="quantity-controls">
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    >
-                      {" "}
-                      -{" "}
-                    </button>
-                    <span>{item.quantity}</span>
-                    <button
-                      onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    >
-                      {" "}
-                      +{" "}
-                    </button>
-                  </div>
                   <button
                     className="remove-btn"
                     onClick={() => removeFromCart(item.id)}
                   >
                     ❌ Remove
+                  </button>
+                </div>
+                {/* ✅ Quantity controls moved to the extreme right */}
+                <div className="quantity-controls">
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  >
+                    -
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    +
                   </button>
                 </div>
               </div>
@@ -86,7 +90,9 @@ const Cart = () => {
             <button className="clear-cart" onClick={clearCart}>
               Clear Cart
             </button>
-            <button className="checkout">Proceed to Checkout</button>
+            <button className="checkout" onClick={proceedToCheckout}>
+              Proceed to Checkout
+            </button>
           </div>
         </>
       )}

@@ -28,13 +28,8 @@ const LoginSignup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const validateEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const validateContact = (contact) => {
-    return /^\d{10}$/.test(contact);
-  };
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const validateContact = (contact) => /^\d{10}$/.test(contact);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,7 +74,7 @@ const LoginSignup = () => {
       };
       localStorage.setItem("user", JSON.stringify(userData));
       setUser(userData);
-      navigate("/");
+      navigate("/profile"); // ✅ Redirect to Profile Page after login
     }
   };
 
@@ -91,7 +86,7 @@ const LoginSignup = () => {
   return (
     <div>
       <nav className="navbar">
-        <h1>TrandKart</h1>
+        <h1>TrendKart</h1>
         {user ? (
           <div>
             <span>Welcome, {user.fullName}</span>
@@ -109,7 +104,7 @@ const LoginSignup = () => {
       <div className="container">
         <div className="form-box">
           <h2 className="title">
-            {isLogin ? "Login to TrandKart" : "Sign Up for TrandKart"}
+            {isLogin ? "Login to TrendKart" : "Sign Up for TrendKart"}
           </h2>
           <form onSubmit={handleSubmit}>
             {!isLogin && (

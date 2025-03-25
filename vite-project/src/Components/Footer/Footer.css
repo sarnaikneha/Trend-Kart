@@ -2,7 +2,9 @@
   color: rgb(43, 41, 41);
   text-align: center;
   padding: 40px 10%;
-  width: 82vw;
+  background: #e7b6f0;
+  width: 250vh;
+  margin-right: 250px;
 }
 
 .error-message {
@@ -86,7 +88,7 @@
 }
 
 .go-to-top {
-  background-color: #eba4f4;
+  background-color: #e894f3;
   color: rgb(60, 59, 59);
   width: 100vh;
   font-size: 16px;
@@ -100,5 +102,5 @@
 }
 
 .go-to-top:hover {
-  background-color: #ca76f4;
+  background-color: #bf63ec;
 }

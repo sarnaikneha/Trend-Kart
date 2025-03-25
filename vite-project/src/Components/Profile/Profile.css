@@ -1,0 +1,115 @@
+/* Background Styling */
+body {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Profile Container with Glassmorphism */
+.profile-container {
+  width: 450px;
+  padding: 30px;
+  background: rgba(194, 106, 218, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: rgb(37, 35, 35);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Profile Image */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-photo:hover {
+  transform: scale(1.1);
+}
+
+/* User Details */
+.profile-details {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.profile-details p {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.profile-details strong {
+  color: #232321;
+  font-weight: 700;
+}
+
+/* Wishlist Section */
+.wishlist-section {
+  margin-top: 20px;
+}
+
+.wishlist-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #d552e1;
+}
+
+.wishlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.wishlist-item {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 12px;
+  border-radius: 10px;
+  width: 100px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.wishlist-item:hover {
+  transform: scale(1.1);
+}
+
+.wishlist-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Logout Button */
+.logout-btn {
+  margin-top: 20px;
+  margin-left: 70px;
+  padding: 12px 18px;
+  background: #e474e8;
+  color: rgb(36, 33, 33);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background: #d129e0;
+  transform: scale(1.05);
+}

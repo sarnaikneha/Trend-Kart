@@ -33,7 +33,7 @@ body {
 
 .nav-logo p {
   font-family: "Poppins", sans-serif; 
-  font-size: 24px; 
+  font-size: 30px; 
   font-weight: 700;
   color: #9504f5;
 }
@@ -71,7 +71,7 @@ body {
 .nav-login-cart {
   display: flex;
   align-items: center;
-  gap: 15px; 
+  gap: 25px; 
   flex: 1; 
   justify-content: flex-end;
   margin-right: 100px;
@@ -101,17 +101,19 @@ body {
   cursor: pointer;
 }
 .nav-cart-count {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -35px;
-  margin-left: -55px;
+  margin-top: -30px;
+  margin-left: -15px;
   border-radius: 11px;
-  font-size: 14px;
+  font-size: 12px;
   background-color: #cd05fa;
   color: rgb(244, 243, 243);
+ 
+  
 }
 
 
