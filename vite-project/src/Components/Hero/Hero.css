@@ -71,44 +71,140 @@ body {
     opacity: 1;
   }
 }
-
-.hero {
+/* Hero Section */
+.hero1 {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  justify-content: space-between;
+  width: 60%;
+  min-height: 90vh;
+  padding: 80px 10%;
+  color: rgb(48, 46, 46);
+  position: relative;
+  overflow: hidden;
+  margin-right: 220px;
+}
+
+/* Left Section */
+.hero-left {
+  border-radius: 10px;
+  width: 180px;
+  box-shadow: #333;
+  background-color: #e1aaf3;
+  border: 1px solid rgb(232, 64, 232);
 }
 
 .hero-left h2 {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 35px;
+  font-weight: 700;
+  color: #474242;
+  text-transform: uppercase;
+  margin-bottom: -25px;
+}
+
+.hero-left h5 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #201e1e;
+  line-height: 1.6;
+  margin-bottom: -20px;
 }
 
 .hero-button {
   display: flex;
   align-items: center;
-  gap: 10px;
+  margin-left: 15px;
+  margin-top: 50px;
 }
 
 .hero-button button {
-  background-color: #de65f6;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
+  background-color: #cc8ee4;
 }
 
 .hero-button button:hover {
-  background-color: #c929ed;
+  background: linear-gradient(135deg, #c929ed, #a400d6);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
 }
-.hero {
-  background-image: url("https://www.shutterstock.com/image-photo/trendy-beautiful-young-asian-woman-260nw-1590685858.jpg"); /* Adjust the path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding: 50px 0; /* Adjust padding as needed */
-  color: white; /* Ensure text is readable */
+
+.hero-button img {
+  width: 35px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-button img:hover {
+  transform: translateX(5px);
+}
+
+/* Right Section */
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeInRight 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-left {
+    width: 100%;
+    text-align: center;
+    align-items: center; /* Centers text on small screens */
+    padding: 20px;
+  }
+
+  .hero-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-right img {
+    width: 80%;
+    max-width: 350px;
+  }
+
+  .hero-button {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .hero-video {
@@ -140,17 +236,17 @@ body {
 }
 .last {
   display: flex;
-
+  margin-bottom: 50px;
   width: 100vw;
   margin-left: 90px;
 }
 .lastdiv {
   max-width: 400px;
   margin-top: 150px;
+  margin-left: 20px;
 }
 
 .shop-now {
-  background-color: #de65f6;
   color: white;
   padding: 10px 20px;
   border: none;

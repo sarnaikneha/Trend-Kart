@@ -1,18 +1,18 @@
-.popular {
+.popular1 {
   display: flex;
   width: 82vw;
   justify-content: space-between;
   align-items: center;
-  margin-left: 200px;
+  margin-left: 150px;
   padding: 60px 10%;
-
   position: relative;
   overflow: hidden;
 }
 
 .left {
-  width: 35vw;
+  width: 25vw;
   min-height: 200px;
+  border: 1px solid rgb(209, 134, 232);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -21,10 +21,15 @@
   padding: 20px;
   word-spacing: 2px;
   line-height: 1;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: #e5d5f0;
+  border-radius: 20px;
 }
 
 .left h2 {
-  font-size: 2.8rem;
+  font-size: 2rem;
+
   font-weight: 700;
   color: #333;
   margin-bottom: 4px;
@@ -55,31 +60,31 @@
 }
 
 .right {
-  flex: 1;
+  width: 100%;
+  max-width: 700px; /* Adjust as needed */
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.right img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 14px;
-  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out;
+.image-slider {
+  display: flex;
+  gap: 5px; /* Adjust space between images */
+  animation: scrollImages 5s linear infinite;
 }
 
-.right img:hover {
-  transform: scale(1.08);
+.image-slider img {
+  width: 150px; /* Adjust image size */
+  height: auto;
+  border-radius: 12px;
 }
 
-@media (max-width: 768px) {
-  .popular {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 6%;
-  }
+@keyframes scrollImages {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-120%); } /* Adjust based on image count */
+}
+
 
   .left {
     align-items: center;

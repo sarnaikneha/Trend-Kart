@@ -20,48 +20,56 @@ const Payment = () => {
 
   return (
     <div className="payment-page">
-      <h2>💳 Secure Payment</h2>
-      <p className="total-amount">
-        Total Amount: <strong>₹{totalAmount.toFixed(2)}</strong>
-      </p>
-
-      <div className="payment-options">
-        <button
-          onClick={() => handlePayment("Credit Card")}
-          className="payment-btn"
-        >
-          💳 Credit Card
-        </button>
-        <button
-          onClick={() => handlePayment("Debit Card")}
-          className="payment-btn"
-        >
-          🏦 Debit Card
-        </button>
-        <button onClick={() => handlePayment("UPI")} className="payment-btn">
-          📱 UPI
-        </button>
-        <button
-          onClick={() => handlePayment("Net Banking")}
-          className="payment-btn"
-        >
-          🌐 Net Banking
-        </button>
-        <button onClick={() => handlePayment("QR Code")} className="qr-btn">
-          📷 Pay via QR Code
-        </button>
-      </div>
-
-      {showQRCode && (
-        <div className="qr-section">
-          <h3>Scan QR Code to Pay</h3>
-          <QRCodeCanvas
-            value={`upi://pay?pa=your-upi-id@upi&pn=Your Name&am=${totalAmount}&cu=INR`}
-            size={180}
-          />
-          <p>Use any UPI app to scan and pay</p>
+      <div className="top-bottom">
+        <div className="top">
+          <h2>💳 Secure Payment</h2>
+          <p className="total-amount">
+            Total Amount: <strong>₹{totalAmount.toFixed(2)}</strong>
+          </p>
         </div>
-      )}
+        <div className="bottom">
+          <div className="payment-options">
+            <button
+              onClick={() => handlePayment("Credit Card")}
+              className="payment-btn"
+            >
+              💳 Credit Card
+            </button>
+            <button
+              onClick={() => handlePayment("Debit Card")}
+              className="payment-btn"
+            >
+              🏦 Debit Card
+            </button>
+            <button
+              onClick={() => handlePayment("UPI")}
+              className="payment-btn"
+            >
+              📱 UPI
+            </button>
+            <button
+              onClick={() => handlePayment("Net Banking")}
+              className="payment-btn"
+            >
+              🌐 Net Banking
+            </button>
+            <button onClick={() => handlePayment("QR Code")} className="qr-btn">
+              📷 Pay via QR Code
+            </button>
+          </div>
+
+          {showQRCode && (
+            <div className="qr-section">
+              <h3>Scan QR Code to Pay</h3>
+              <QRCodeCanvas
+                value={`upi://pay?pa=your-upi-id@upi&pn=Your Name&am=${totalAmount}&cu=INR`}
+                size={180}
+              />
+              <p>Use any UPI app to scan and pay</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

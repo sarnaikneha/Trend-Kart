@@ -42,20 +42,38 @@ const Hero = () => {
       </div>
 
       <div className="hero">
-        <div className="hero-left">
-          <h2>NEW ARRIVAL </h2>
-          <h5>New</h5>
-          <h5>Collection</h5>
-          <h5>for everyone</h5>
+        <div className="hero1">
+          <div className="hero-left">
+            <h2>NEW ARRIVAL </h2>
+            <h5>New</h5>
+            <h5>Collection</h5>
+            <h5>for everyone</h5>
 
-          <div className="hero-button">
-            <button onClick={() => navigate("../Collection/Collection.jsx")}>
-              Latest collection
-            </button>
-            <img src={arrow_icon} alt="arrow icon" style={{ width: "30px" }} />
+            <div className="hero-button">
+              <button onClick={() => navigate("../Collection/Collection.jsx")}>
+                Latest collection
+              </button>
+            </div>
+          </div>
+          <div className="hero-right">
+            <img
+              src="https://img.freepik.com/free-photo/two-beautiful-women-shopping-town_1303-16426.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hero-left">
+            <h2>NEW ARRIVAL </h2>
+            <h5>New</h5>
+            <h5>Collection</h5>
+            <h5>for everyone</h5>
+
+            <div className="hero-button">
+              <button onClick={() => navigate("../Collection/Collection.jsx")}>
+                Latest collection
+              </button>
+            </div>
           </div>
         </div>
-        <div className="hero-right"></div>
       </div>
 
       <div className="last">

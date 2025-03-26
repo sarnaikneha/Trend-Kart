@@ -24,7 +24,7 @@ const getStars = (rating) => {
 
 const Items = () => {
   return (
-    <div className="items">
+    <div className="items1">
       <h3>Popular in Women</h3>
       <div className="images">
         {itemsData.map((item) => (
