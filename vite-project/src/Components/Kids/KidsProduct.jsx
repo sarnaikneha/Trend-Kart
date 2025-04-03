@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Kidsproduct.css";
 import { kidsProducts } from "../../Components/common/staticCommonData";
 import { addToCart } from "../../Components/common/commonComponent";
+import { useNavigate } from "react-router-dom";
 
 const KidsPage = () => {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -22,9 +24,27 @@ const KidsPage = () => {
             western
             <div className="dropdown">
               <ul>
-                <li>Dresses</li>
-                <li>Tops</li>
-                <li>Jeans & Trousers</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Dresses
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Tops
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Jeans & Trousers
+                </li>
               </ul>
             </div>
           </div>
@@ -33,9 +53,27 @@ const KidsPage = () => {
             Beauty & Health ⬇
             <div className="dropdown">
               <ul>
-                <li>Skincare</li>
-                <li>Haircare</li>
-                <li>Makeup</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Skincare
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Haircare
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Makeup
+                </li>
               </ul>
             </div>
           </div>
@@ -44,9 +82,27 @@ const KidsPage = () => {
             Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li>paying tools</li>
-                <li>bagss</li>
-                <li>toys</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  paying tools
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  bagss
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  toys
+                </li>
               </ul>
             </div>
           </div>
@@ -55,16 +111,34 @@ const KidsPage = () => {
             Bags & Footwear ⬇
             <div className="dropdown">
               <ul>
-                <li>Handbags</li>
-                <li>Sneakers</li>
-                <li>Sandals</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Handbags
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sneakers
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sandals
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       <img
-        src="https://img.freepik.com/free-vector/hand-drawn-kids-toys-sale-banner_23-2149651210.jpg"
+        src="https://img.freepik.com/premium-psd/baby-fashion-cloth-wear-sale-banner-post-promotional-web-banner-psd-file_673898-771.jpg"
         alt=""
       />
       <h2>Kid's Collection</h2>

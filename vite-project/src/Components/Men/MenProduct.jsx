@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./MenProduct.css";
 import { menProducts } from "../../Components/common/staticCommonData";
 import { addToCart } from "../../Components/common/commonComponent";
+import { useNavigate } from "react-router-dom";
+import Collection from "../../Components/Collection/Collection";
 
 const MenPage = () => {
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -21,9 +24,27 @@ const MenPage = () => {
             western
             <div className="dropdown">
               <ul>
-                <li>Dresses</li>
-                <li>T-shirt</li>
-                <li>Jeans & Trousers</li>
+                <li
+                  onClick={() =>
+                    navigate("../../Components/Collection/CollectionPro.jsx")
+                  }
+                >
+                  Dresses
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  T-shirt
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Jeans & Trousers
+                </li>
               </ul>
             </div>
           </div>
@@ -32,9 +53,27 @@ const MenPage = () => {
             Beauty & Health ⬇
             <div className="dropdown">
               <ul>
-                <li>Skincare</li>
-                <li>Haircare</li>
-                <li>Makeup</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Skincare
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Haircare
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Makeup
+                </li>
               </ul>
             </div>
           </div>
@@ -43,9 +82,27 @@ const MenPage = () => {
             Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li>Gym instrument</li>
-                <li>Watches</li>
-                <li>Bracelets</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Gym instrument
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Watches
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Bracelets
+                </li>
               </ul>
             </div>
           </div>
@@ -54,9 +111,27 @@ const MenPage = () => {
             Bags & Footwear ⬇
             <div className="dropdown">
               <ul>
-                <li>Handbags</li>
-                <li>Sneakers</li>
-                <li>Sandals</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Handbags
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sneakers
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sandals
+                </li>
               </ul>
             </div>
           </div>

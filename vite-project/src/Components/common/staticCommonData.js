@@ -196,7 +196,7 @@ export const menProducts = [
   },
   {
     id: 2,
-    name: "Men's Sneakers",
+    name: "Men's Shirt",
     image:
       "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQVW-W-a3H4gvnUZllojM4b6NSBp7IVsbIyUDTZiDHQs6Balux_QxPnIdgSu7YwEWscDQ1TVbnU1Xx9rkJIvvuHlnqBTIZRGVpdi8qRe4xU",
     price: 2499,
@@ -204,7 +204,7 @@ export const menProducts = [
   },
   {
     id: 3,
-    name: "Men's Leather Wallet",
+    name: "Men's Tshirt",
     image:
       "https://sensesindia.in/cdn/shop/files/1-2_986c27bd-4fb8-4d82-a0a5-cd0abeaea2d0.jpg?v=1738751908",
     price: 799,

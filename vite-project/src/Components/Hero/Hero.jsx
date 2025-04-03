@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Hero.css";
 import arrow_icon from "../../assets/arrow_icon.png";
 import women_shop from "../../assets/women_shop.jpg";
-import Collection from "../Collection/Collection";
+import Collection from "../Collection/CollectionPro";
 
 const heroImages = [
   "https://m.media-amazon.com/images/G/31/img24/Fashion/AF/BAU/Winterflip/Unrec/herotator/Pc/SPB_1500x400._CB544017564_.jpg",
@@ -55,10 +55,11 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="hero-right">
+          <div className="scroll-container">
             <img
               src="https://img.freepik.com/free-photo/two-beautiful-women-shopping-town_1303-16426.jpg"
-              alt=""
+              alt="Scrolling Image"
+              className="scrolling-image"
             />
           </div>
           <div className="hero-left">
@@ -80,7 +81,12 @@ const Hero = () => {
         <div className="lastdiv">
           <h2>Exclusive Offer!</h2>
           <p>Get up to 50% off on your first purchase. Limited time offer.</p>
-          <button className="shop-now">Shop Now</button>
+          <button
+            className="shop-now"
+            onClick={() => navigate("../Collection/Collection.jsx")}
+          >
+            Shop Now
+          </button>
         </div>
         <div>
           <div className="hero-video">

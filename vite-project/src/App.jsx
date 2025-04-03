@@ -12,6 +12,7 @@ import ShopCategoryW from "./Pages/ShopCategoryW";
 import ShopCategoryK from "./Pages/ShopCategoryK";
 import Payment from "./Pages/Payment";
 import Profile from "./Components/Profile/Profile";
+import Collection from "./Components/Collection/Collection";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
 
           <Route />
           <Route path="/cart" element={<Cart />} />
+          <Route
+            path="./Components/Collection/Collection.jsx"
+            element={<Collection />}
+          />
 
           <Route path="/payment" element={<Payment />} />
           <Route path="login" element={<LoginSignup />} />

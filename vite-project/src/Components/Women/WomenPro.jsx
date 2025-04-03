@@ -6,7 +6,7 @@ import { addToCart } from "../../Components/common/commonComponent";
 
 const WomenPage = () => {
   const [cart, setCart] = useState([]);
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -25,13 +25,25 @@ const WomenPage = () => {
             Western ⬇
             <div className="dropdown">
               <ul>
-                <li onClick={() => navigate("../Collection/Collection.jsx")}>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
                   Dresses
                 </li>
-                <li onClick={() => navigate("../Collection/Collection.jsx")}>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
                   Tops
                 </li>
-                <li onClick={() => navigate("../Collection/Collection.jsx")}>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
                   Jeans & Trousers
                 </li>
               </ul>
@@ -43,11 +55,27 @@ const WomenPage = () => {
             Beauty & Health ⬇
             <div className="dropdown">
               <ul>
-                <li onClick={() => navigate("/src/Components/Collection")}>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
                   Skincare
                 </li>
-                <li onClick={() => navigate("/women/haircare")}>Haircare</li>
-                <li onClick={() => navigate("/women/makeup")}>Makeup</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Haircare
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Makeup
+                </li>
               </ul>
             </div>
           </div>
@@ -57,9 +85,27 @@ const WomenPage = () => {
             Jewelry & Accessories ⬇
             <div className="dropdown">
               <ul>
-                <li onClick={() => navigate("/women/earrings")}>Earrings</li>
-                <li onClick={() => navigate("/women/necklaces")}>Necklaces</li>
-                <li onClick={() => navigate("/women/bracelets")}>Bracelets</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Earrings
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Necklaces
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Bracelets
+                </li>
               </ul>
             </div>
           </div>
@@ -69,9 +115,27 @@ const WomenPage = () => {
             Bags & Footwear ⬇
             <div className="dropdown">
               <ul>
-                <li onClick={() => navigate("/women/handbags")}>Handbags</li>
-                <li onClick={() => navigate("/women/sneakers")}>Sneakers</li>
-                <li onClick={() => navigate("/women/sandals")}>Sandals</li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Handbags
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sneakers
+                </li>
+                <li
+                  onClick={() =>
+                    navigate("/src/Components/Collection/Collection.jsx")
+                  }
+                >
+                  Sandals
+                </li>
               </ul>
             </div>
           </div>
@@ -79,7 +143,7 @@ const WomenPage = () => {
       </div>
 
       <img
-        src="https://img.freepik.com/free-vector/fashion-trends-sale-banner-template_23-2150769839.jpg"
+        src="https://i.pinimg.com/736x/ba/65/e2/ba65e2699cf758b587a820d5529ed9ea.jpg"
         alt="Banner"
       />
       <h2>Products</h2>
