@@ -13,12 +13,10 @@
   font-weight: 700;
   color: #c70cf1;
   margin-bottom: 30px;
-
   width: 88vw;
   margin-left: -100px;
 }
 
-/* Images in one line */
 .images {
   display: flex;
   justify-content: center;
@@ -67,4 +65,81 @@
   font-size: 1rem;
   color: #f11af1;
   font-weight: 600;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .items1 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .items1 h3 {
+    margin-left: 0;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .images {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .items1 {
+    width: 90%;
+    padding: 30px 4%;
+  }
+
+  .items1 h3 {
+    font-size: 1.3rem;
+  }
+
+  .item-card {
+    min-width: 150px;
+  }
+
+  .item-card img {
+    max-height: 140px;
+  }
+
+  .item-name,
+  .item-rating,
+  .item-price {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .items1 {
+    width: 95%;
+    padding: 25px 3%;
+  }
+
+  .items1 h3 {
+    font-size: 1.1rem;
+  }
+
+  .item-card {
+    min-width: 140px;
+    padding: 10px;
+  }
+
+  .item-card img {
+    max-height: 120px;
+  }
+
+  .item-name,
+  .item-rating,
+  .item-price {
+    font-size: 0.85rem;
+  }
 }

@@ -113,3 +113,91 @@ body {
   background: #d129e0;
   transform: scale(1.05);
 }
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .profile-container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .profile-details {
+    font-size: 17px;
+  }
+
+  .wishlist-item {
+    width: 90px;
+  }
+
+  .wishlist-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logout-btn {
+    margin-left: 0;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-details {
+    font-size: 16px;
+  }
+
+  .wishlist-section h3 {
+    font-size: 20px;
+  }
+
+  .wishlist-item {
+    width: 80px;
+  }
+
+  .wishlist-img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .logout-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profile-details {
+    font-size: 15px;
+  }
+
+  .wishlist-item {
+    width: 70px;
+  }
+
+  .wishlist-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logout-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}

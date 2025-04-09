@@ -11,7 +11,6 @@ body {
   height: 100vh;
   margin-right: 150px;
 }
-/*  */
 
 .navbar h1 {
   margin: 0;
@@ -30,7 +29,6 @@ body {
 .navbar span {
   font-size: 16px;
   font-weight: 500;
-  font: bold;
   margin-right: 10px;
 }
 
@@ -124,8 +122,72 @@ body {
 .toggle-link:hover {
   text-decoration: underline;
 }
+
 .error {
   color: red;
   font-size: 14px;
   margin-top: 5px;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets and below */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin-right: 0;
+    padding: 20px;
+    height: auto;
+  }
+
+  .form-box {
+    margin-left: 0;
+    width: 90%;
+  }
+
+  .navbar h1 {
+    font-size: 22px;
+  }
+
+  .navbar span {
+    font-size: 14px;
+  }
+
+  .logout-btn,
+  .login-btn {
+    margin-right: 20px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  .form-box {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .navbar h1 {
+    font-size: 20px;
+  }
+
+  .logout-btn,
+  .login-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
 }

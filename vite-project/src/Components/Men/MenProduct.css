@@ -1,3 +1,5 @@
+/* Base styles - already provided above */
+
 body {
   overflow-x: hidden;
   width: 100%;
@@ -49,7 +51,6 @@ body {
   color: #dc4de6;
 }
 
-/* 🔥 Stylish Dropdown */
 .dropdown {
   opacity: 0;
   visibility: hidden;
@@ -67,7 +68,6 @@ body {
   overflow: hidden;
 }
 
-/* 🔥 Slide Down Effect */
 .category:hover .dropdown {
   opacity: 1;
   visibility: visible;
@@ -88,7 +88,6 @@ body {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* 🔥 Hover Effect */
 .dropdown li:hover {
   background: #f9e1fc;
   color: #d633ed;
@@ -98,7 +97,7 @@ body {
 .men-page img {
   width: 90%;
   height: 300px;
-  border: 1 px solid rgb(247, 245, 245);
+  border: 1px solid rgb(247, 245, 245);
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -106,8 +105,8 @@ body {
 .men-products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Ensures products align in a row */
-  gap: 20px; /* Reduced gap for better alignment */
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -119,8 +118,8 @@ body {
   gap: -25px;
   text-align: center;
   transition: transform 0.3s ease;
-  width: 220px; /* Set a fixed width for uniformity */
-  min-height: 150px; /* Ensures uniform height */
+  width: 220px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,7 +133,7 @@ body {
 .product-image {
   width: 100%;
   height: auto;
-  max-height: 180px; /* Adjusted for better fit */
+  max-height: 180px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -181,4 +180,87 @@ body {
 
 .men-product-card button:hover {
   background: #f150ee;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .men-page {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .men-page h2 {
+    font-size: 24px;
+  }
+
+  .category-list {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .dropdown {
+    left: 0;
+    transform: none;
+    top: 35px;
+  }
+
+  .men-page img {
+    height: 220px;
+  }
+
+  .men-product-card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .men-page {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .men-page h2 {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
+  .category-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dropdown {
+    width: 100%;
+    position: static;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .men-page img {
+    height: 180px;
+  }
+
+  .men-product-card {
+    width: 90%;
+    margin: auto;
+  }
+
+  .product-info h3 {
+    font-size: 13px;
+  }
+
+  .price,
+  .rating {
+    font-size: 14px;
+  }
+
+  .men-product-card button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
 }

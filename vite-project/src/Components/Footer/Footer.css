@@ -2,9 +2,9 @@
   color: rgb(43, 41, 41);
   text-align: center;
   padding: 40px 10%;
-  background: #e7b6f0;
-  width: 250vh;
-  margin-right: 250px;
+  background-color: #efd3f2;
+  width: 240vh;
+  margin-right: 290px;
 }
 
 .error-message {
@@ -30,6 +30,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .subscribe-box input {
@@ -90,7 +91,7 @@
 .go-to-top {
   background-color: #e894f3;
   color: rgb(60, 59, 59);
-  width: 100vh;
+  width: 50vh;
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -103,4 +104,70 @@
 
 .go-to-top:hover {
   background-color: #bf63ec;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+  .footer {
+    width: 100%;
+    margin-right: 0;
+    padding: 30px 5%;
+  }
+
+  .go-to-top {
+    width: 100%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .footer-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .subscribe-box input {
+    width: 100%;
+  }
+
+  .subscribe-box button {
+    width: 100%;
+  }
+
+  .social-icons {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .go-to-top {
+    font-size: 14px;
+    width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .footer {
+    padding: 25px 3%;
+  }
+
+  .footer-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-content p,
+  .company-info {
+    font-size: 0.85rem;
+  }
+
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+  }
 }
