@@ -76,7 +76,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   min-height: 90vh;
   padding: 80px 10%;
   color: rgb(48, 46, 46);
@@ -88,18 +88,18 @@ body {
 /* Left Section */
 .hero-left {
   border-radius: 10px;
-  width: 180px;
+  width: 250px;
   box-shadow: #333;
   background-color: #e2c4ec;
   border: 1px solid rgb(232, 64, 232);
 }
 .hero-left:hover {
-  background-color: #897d8d;
+  background-color: #dba6ec;
   transform: translateX(5px);
 }
 .hero-left h2 {
-  font-size: 35px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 500;
   color: #474242;
   text-transform: uppercase;
   margin-bottom: -25px;
