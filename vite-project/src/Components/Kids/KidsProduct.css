@@ -12,7 +12,7 @@ body {
   padding: 20px;
   margin-top: 30px;
   font-family: Arial, sans-serif;
-  margin-left: 200px;
+
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
@@ -20,12 +20,12 @@ body {
 }
 
 .kids-page h2 {
-  color: #333;
+  color: #f3ebeb;
   margin-right: 10px;
   width: 100vw;
   font-size: 28px;
   margin-bottom: 2px;
-  background-color: #cc8ee4;
+  background-color: #bd45ed;
 }
 
 .category-list {
@@ -164,7 +164,7 @@ body {
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #d930f7;
+  color: #bd45ed;
 }
 
 .rating {
@@ -174,7 +174,7 @@ body {
 }
 
 .kids-product-card button {
-  background: #f265f5;
+  background: #bd45ed;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -185,7 +185,7 @@ body {
 }
 
 .kids-product-card button:hover {
-  background: #f150ee;
+  background: #b910db;
 }
 
 /* ========== MEDIA QUERIES ========== */

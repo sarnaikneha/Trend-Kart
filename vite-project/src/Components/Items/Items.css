@@ -1,30 +1,36 @@
-.items1 {
+.items-wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px 20px;
   text-align: center;
-  padding: 40px 5%;
-  width: 50%;
-  margin-left: 320px;
   border: 2px solid rgb(209, 54, 244);
   background-color: #edceed;
   border-radius: 20px;
 }
 
-.items1 h3 {
+.items-wrapper h3 {
   font-size: 1.8rem;
   font-weight: 700;
   color: #c70cf1;
-  margin-bottom: 30px;
-  width: 88vw;
-  margin-left: -100px;
+  margin-bottom: 20px;
 }
 
-.images {
+.toggle-button {
+  background-color: #9333ea;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.items-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  margin-left: -110px;
-  width: 90vw;
+  gap: 16px;
 }
 
 .item-card {
@@ -33,7 +39,7 @@
   border-radius: 10px;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  min-width: 180px;
+  width: 180px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -67,79 +73,63 @@
   font-weight: 600;
 }
 
-/* ========== MEDIA QUERIES ========== */
+/* ========== Responsive Layouts ========== */
 
-/* Tablets and below */
+/* Tablets */
 @media (max-width: 1024px) {
-  .items1 {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .items1 h3 {
-    margin-left: 0;
-    width: 100%;
+  .items-wrapper h3 {
     font-size: 1.5rem;
   }
 
-  .images {
-    margin-left: 0;
-    width: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
+  .item-card {
+    width: 160px;
   }
 }
 
-/* Mobile devices */
+/* Mobile */
 @media (max-width: 768px) {
-  .items1 {
-    width: 90%;
-    padding: 30px 4%;
+  .items-wrapper {
+    padding: 25px 10px;
   }
 
-  .items1 h3 {
+  .items-wrapper h3 {
     font-size: 1.3rem;
   }
 
   .item-card {
-    min-width: 150px;
+    width: 140px;
+    padding: 10px;
   }
 
   .item-card img {
-    max-height: 140px;
+    max-height: 130px;
   }
 
   .item-name,
-  .item-rating,
-  .item-price {
+  .item-price,
+  .item-rating {
     font-size: 0.95rem;
   }
 }
 
 /* Small phones */
 @media (max-width: 480px) {
-  .items1 {
-    width: 95%;
-    padding: 25px 3%;
-  }
-
-  .items1 h3 {
+  .items-wrapper h3 {
     font-size: 1.1rem;
   }
 
   .item-card {
-    min-width: 140px;
-    padding: 10px;
+    width: 130px;
+    padding: 8px;
   }
 
   .item-card img {
-    max-height: 120px;
+    max-height: 110px;
   }
 
   .item-name,
-  .item-rating,
-  .item-price {
+  .item-price,
+  .item-rating {
     font-size: 0.85rem;
   }
 }

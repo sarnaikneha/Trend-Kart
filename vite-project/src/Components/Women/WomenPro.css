@@ -10,7 +10,7 @@ body {
   padding: 20px;
   margin-top: 30px;
   font-family: Arial, sans-serif;
-  margin-left: 200px;
+
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
@@ -18,12 +18,12 @@ body {
 }
 
 .women-page h2 {
-  color: #333;
+  color: #f0e7e7;
   margin-right: 10px;
   width: 100vw;
   font-size: 28px;
   margin-bottom: 2px;
-  background-color: #cc8ee4;
+  background-color: #bd45ed;
 }
 
 .category-list {
@@ -147,7 +147,7 @@ body {
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #d930f7;
+  color: #bd45ed;
 }
 
 .rating {
@@ -156,7 +156,7 @@ body {
 }
 
 .women-product-card button {
-  background: #f265f5;
+  background: #bd45ed;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -168,7 +168,7 @@ body {
 }
 
 .women-product-card button:hover {
-  background: #f150ee;
+  background: #a50deb;
 }
 
 /* ========== MEDIA QUERIES ========== */

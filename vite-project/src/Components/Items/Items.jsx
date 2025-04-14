@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Items.css";
 import img1 from "../../assets/img1.webp";
 import img2 from "../../assets/img2.webp";
@@ -23,19 +23,31 @@ const getStars = (rating) => {
 };
 
 const Items = () => {
+  const [showItems, setShowItems] = useState(true);
+
   return (
-    <div className="items1">
+    <div className="items-wrapper">
       <h3>Popular in Women</h3>
-      <div className="images">
-        {itemsData.map((item) => (
-          <div key={item.id} className="item-card">
-            <img src={item.img} alt={item.name} />
-            <p className="item-name">{item.name}</p>
-            <div className="item-price">{item.price}</div>
-            <div className="item-rating">{getStars(item.rating)}</div>
-          </div>
-        ))}
-      </div>
+
+      <button
+        className="toggle-button"
+        onClick={() => setShowItems(!showItems)}
+      >
+        {showItems ? "Hide Products" : "Show Products"}
+      </button>
+
+      {showItems && (
+        <div className="items-grid">
+          {itemsData.map((item) => (
+            <div key={item.id} className="item-card">
+              <img src={item.img} alt={item.name} />
+              <p className="item-name">{item.name}</p>
+              <div className="item-price">{item.price}</div>
+              <div className="item-rating">{getStars(item.rating)}</div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

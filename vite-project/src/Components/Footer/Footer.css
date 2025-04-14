@@ -3,8 +3,8 @@
   text-align: center;
   padding: 40px 10%;
   background-color: #efd3f2;
-  width: 240vh;
-  margin-right: 290px;
+  width: 1300px;
+  box-sizing: border-box;
 }
 
 .error-message {
@@ -14,7 +14,7 @@
 }
 
 .footer-content h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
@@ -39,6 +39,7 @@
   border: none;
   width: 250px;
   font-size: 1rem;
+  max-width: 100%;
 }
 
 .subscribe-box button {
@@ -60,8 +61,9 @@
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .social-icons img {
@@ -76,6 +78,7 @@
 
 .company-info {
   font-size: 0.9rem;
+  margin-bottom: 15px;
 }
 
 .company-info a {
@@ -89,9 +92,8 @@
 }
 
 .go-to-top {
-  background-color: #e894f3;
-  color: rgb(60, 59, 59);
-  width: 50vh;
+  background-color: #a93dbe;
+  color: rgb(235, 227, 227);
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -99,62 +101,62 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
 }
 
-.go-to-top:hover {
-  background-color: #bf63ec;
-}
+/* ================= MEDIA QUERIES ================= */
 
-/* ========== MEDIA QUERIES ========== */
-
-/* Tablets and below */
+/* Laptops & Tablets */
 @media (max-width: 1024px) {
-  .footer {
-    width: 100%;
-    margin-right: 0;
-    padding: 30px 5%;
-  }
-
-  .go-to-top {
-    width: 100%;
-  }
-}
-
-/* Mobile devices */
-@media (max-width: 768px) {
   .footer-content h2 {
-    font-size: 1.4rem;
-  }
-
-  .subscribe-box {
-    flex-direction: column;
-    gap: 10px;
+    font-size: 1.7rem;
   }
 
   .subscribe-box input {
     width: 100%;
+    max-width: 100%;
   }
 
+  .subscribe-box button {
+    width: auto;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 6%;
+  }
+
+  .footer-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .footer-content p {
+    font-size: 0.95rem;
+  }
+
+  .subscribe-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribe-box input,
   .subscribe-box button {
     width: 100%;
   }
 
-  .social-icons {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
   .go-to-top {
     font-size: 14px;
-    width: 100%;
   }
 }
 
-/* Small phones */
+/* Small Phones */
 @media (max-width: 480px) {
   .footer {
-    padding: 25px 3%;
+    padding: 25px 4%;
   }
 
   .footer-content h2 {

@@ -74,7 +74,7 @@ const LoginSignup = () => {
       };
       localStorage.setItem("user", JSON.stringify(userData));
       setUser(userData);
-      navigate("/profile"); // ✅ Redirect to Profile Page after login
+      navigate("/profile");
     }
   };
 
@@ -84,12 +84,12 @@ const LoginSignup = () => {
   };
 
   return (
-    <div>
+    <div className="login-wrapper">
       <nav className="navbar">
-        <h1>TrendKart</h1>
+        <h1 className="brand">TrendKart</h1>
         {user ? (
-          <div>
-            <span>Welcome, {user.fullName}</span>
+          <div className="user-info">
+            <span className="welcome-text">Welcome, {user.fullName}</span>
             <button onClick={handleLogout} className="logout-btn">
               Logout
             </button>
@@ -104,16 +104,22 @@ const LoginSignup = () => {
       <div className="container">
         <div className="form-box">
           <h2 className="title">
-            {isLogin ? "Login to TrendKart" : "Sign Up for TrendKart"}
+            {isLogin ? "Welcome Back!" : "Create Your Account"}
           </h2>
-          <form onSubmit={handleSubmit}>
+          <p className="subtitle">
+            {isLogin
+              ? "Login to continue shopping"
+              : "Join TrendKart and enjoy exclusive offers!"}
+          </p>
+
+          <form onSubmit={handleSubmit} className="auth-form">
             {!isLogin && (
               <div className="input-group">
                 <label>Full Name</label>
                 <input
                   type="text"
                   name="fullName"
-                  placeholder="Enter your full name"
+                  placeholder="John Doe"
                   value={formData.fullName}
                   onChange={handleChange}
                 />
@@ -125,7 +131,7 @@ const LoginSignup = () => {
               <input
                 type="email"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="example@domain.com"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -137,7 +143,7 @@ const LoginSignup = () => {
                 <input
                   type="text"
                   name="contact"
-                  placeholder="Enter your contact number"
+                  placeholder="1234567890"
                   value={formData.contact}
                   onChange={handleChange}
                 />
@@ -174,14 +180,16 @@ const LoginSignup = () => {
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
+
           <p className="toggle-text">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}
+            {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
             <span className="toggle-link" onClick={() => setIsLogin(!isLogin)}>
               {isLogin ? "Sign Up" : "Login"}
             </span>
           </p>
         </div>
       </div>
+
       <Footer />
     </div>
   );

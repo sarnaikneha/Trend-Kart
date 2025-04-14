@@ -7,16 +7,22 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   const [searchQuery, setSearchQuery] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   let getUser = localStorage.getItem("user");
   getUser = getUser ? JSON.parse(getUser) : undefined;
   let name = getUser?.fullName || "Login";
   const cartCount = JSON.parse(localStorage.getItem("cart") || "[]").length;
 
+  const handleNavClick = (menuItem) => {
+    setMenu(menuItem);
+    setIsMenuOpen(false); // close menu on mobile after click
+  };
+
   return (
     <div className="navbar">
-      <div className="nav-logo">
-        {/* Wrap the logo inside Link to navigate to Shop */}
-        <Link to="/" onClick={() => setMenu("Shop")}>
+      <div className="navbar-container">
+        <Link to="/" onClick={() => handleNavClick("Shop")}>
           <img
             src={logo}
             alt="Logo"
@@ -27,6 +33,12 @@ export const Navbar = () => {
 
         <p className="brand-name">TRENDKART</p>
 
+        <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+
         <input
           type="text"
           className="search-bar"
@@ -36,26 +48,26 @@ export const Navbar = () => {
         />
       </div>
 
-      <ul className="nav-menu">
-        <li onClick={() => setMenu("Shop")}>
+      <ul className={`nav-menu ${isMenuOpen ? "show" : ""}`}>
+        <li onClick={() => handleNavClick("Shop")}>
           <Link to="/" className="nav-link">
             Shop
           </Link>
           {menu === "Shop" && <hr />}
         </li>
-        <li onClick={() => setMenu("Men")}>
+        <li onClick={() => handleNavClick("Men")}>
           <Link to="/Mens" className="nav-link">
             Men
           </Link>
           {menu === "Men" && <hr />}
         </li>
-        <li onClick={() => setMenu("Women")}>
+        <li onClick={() => handleNavClick("Women")}>
           <Link to="/Womens" className="nav-link">
             Women
           </Link>
           {menu === "Women" && <hr />}
         </li>
-        <li onClick={() => setMenu("Kids")}>
+        <li onClick={() => handleNavClick("Kids")}>
           <Link to="/Kids" className="nav-link">
             Kids
           </Link>

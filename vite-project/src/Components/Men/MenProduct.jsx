@@ -7,6 +7,7 @@ import Collection from "../../Components/Collection/Collection";
 
 const MenPage = () => {
   const [cart, setCart] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,126 +16,62 @@ const MenPage = () => {
       setCart(JSON.parse(storedCart));
     }
   }, []);
+
+  const toggleDropdown = (title) => {
+    setActiveDropdown((prev) => (prev === title ? null : title));
+  };
+
+  const categories = [
+    {
+      title: "Western",
+      items: ["Dresses", "T-shirt", "Jeans & Trousers"],
+    },
+    {
+      title: "Beauty & Health",
+      items: ["Skincare", "Haircare", "Makeup"],
+    },
+    {
+      title: "Accessories",
+      items: ["Gym instrument", "Watches", "Bracelets"],
+    },
+    {
+      title: "Bags & Footwear",
+      items: ["Handbags", "Sneakers", "Sandals"],
+    },
+  ];
+
   return (
     <div className="men-page">
       <div className="title">
         <h2>Men's Collection</h2>
         <div className="category-list">
-          <div className="category">
-            western
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("../../Components/Collection/CollectionPro.jsx")
-                  }
-                >
-                  Dresses
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  T-shirt
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Jeans & Trousers
-                </li>
-              </ul>
+          {categories.map((cat, index) => (
+            <div
+              key={index}
+              className="category"
+              onClick={() => toggleDropdown(cat.title)}
+            >
+              {cat.title} ⬇
+              <div
+                className={`dropdown ${
+                  activeDropdown === cat.title ? "show-dropdown" : ""
+                }`}
+              >
+                <ul>
+                  {cat.items.map((item, i) => (
+                    <li
+                      key={i}
+                      onClick={() =>
+                        navigate("/src/Components/Collection/Collection.jsx")
+                      }
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-
-          <div className="category">
-            Beauty & Health ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Skincare
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Haircare
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Makeup
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="category">
-            Accessories ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Gym instrument
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Watches
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Bracelets
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="category">
-            Bags & Footwear ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Handbags
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Sneakers
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Sandals
-                </li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
       <img

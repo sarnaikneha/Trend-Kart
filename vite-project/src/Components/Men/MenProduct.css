@@ -1,5 +1,4 @@
-/* Base styles - already provided above */
-
+/* Base styles */
 body {
   overflow-x: hidden;
   width: 100%;
@@ -12,7 +11,7 @@ body {
   padding: 20px;
   margin-top: 30px;
   font-family: Arial, sans-serif;
-  margin-left: 200px;
+
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
@@ -20,12 +19,12 @@ body {
 }
 
 .men-page h2 {
-  color: #333;
+  color: #ece4e4;
   margin-right: 10px;
   width: 100vw;
   font-size: 28px;
   margin-bottom: 2px;
-  background-color: #cc8ee4;
+  background-color: #bd45ed;
 }
 
 .category-list {
@@ -34,6 +33,7 @@ body {
   gap: 30px;
   margin-bottom: 20px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .category {
@@ -68,10 +68,11 @@ body {
   overflow: hidden;
 }
 
-.category:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(5px);
+/* Show dropdown when active */
+.show-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(5px) !important;
 }
 
 .dropdown ul {
@@ -115,7 +116,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  gap: -25px;
   text-align: center;
   transition: transform 0.3s ease;
   width: 220px;
@@ -158,7 +158,7 @@ body {
 .price {
   font-size: 16px;
   font-weight: bold;
-  color: #d930f7;
+  color: #c222de;
 }
 
 .rating {
@@ -167,7 +167,7 @@ body {
 }
 
 .men-product-card button {
-  background: #f265f5;
+  background: #c222de;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -179,10 +179,10 @@ body {
 }
 
 .men-product-card button:hover {
-  background: #f150ee;
+  background: #73038d;
 }
 
-/* ========== MEDIA QUERIES ========== */
+/* ===== MEDIA QUERIES ===== */
 
 /* Tablets */
 @media screen and (max-width: 768px) {
@@ -215,6 +215,7 @@ body {
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 480px) {
   .men-page {
     margin-left: 0;
@@ -236,9 +237,16 @@ body {
     width: 100%;
     position: static;
     box-shadow: none;
-    transform: none;
-    opacity: 1;
-    visibility: visible;
+    transform: none !important;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .show-dropdown {
+    position: static;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .men-page img {
