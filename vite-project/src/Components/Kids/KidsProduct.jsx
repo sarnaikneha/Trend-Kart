@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const KidsPage = () => {
   const [cart, setCart] = useState([]);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,133 +16,64 @@ const KidsPage = () => {
     }
   }, []);
 
+  const toggleDropdown = (title) => {
+    setActiveDropdown((prev) => (prev === title ? null : title));
+  };
+
+  const categories = [
+    {
+      title: "Western",
+      items: ["Dresses", "Tops", "Jeans & Trousers"],
+    },
+    {
+      title: "Beauty & Health",
+      items: ["Skincare", "Haircare", "Makeup"],
+    },
+    {
+      title: "Accessories",
+      items: ["Playing Tools", "Bags", "Toys"],
+    },
+    {
+      title: "Bags & Footwear",
+      items: ["Handbags", "Sneakers", "Sandals"],
+    },
+  ];
+
   return (
     <div className="kids-page">
       <div className="title">
         <h2>Kid's Collection</h2>
         <div className="category-list">
-          <div className="category">
-            western
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Dresses
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Tops
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Jeans & Trousers
-                </li>
-              </ul>
+          {categories.map((cat, index) => (
+            <div
+              key={index}
+              className="category"
+              onClick={() => toggleDropdown(cat.title)}
+            >
+              {cat.title} ⬇
+              <div
+                className={`dropdown ${
+                  activeDropdown === cat.title ? "show-dropdown" : ""
+                }`}
+              >
+                <ul>
+                  {cat.items.map((item, i) => (
+                    <li key={i} onClick={() => navigate("/collection")}>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-
-          <div className="category">
-            Beauty & Health ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Skincare
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Haircare
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Makeup
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="category">
-            Accessories ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  paying tools
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  bagss
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  toys
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="category">
-            Bags & Footwear ⬇
-            <div className="dropdown">
-              <ul>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Handbags
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Sneakers
-                </li>
-                <li
-                  onClick={() =>
-                    navigate("/src/Components/Collection/Collection.jsx")
-                  }
-                >
-                  Sandals
-                </li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
       <img
         src="https://img.freepik.com/premium-psd/baby-fashion-cloth-wear-sale-banner-post-promotional-web-banner-psd-file_673898-771.jpg"
-        alt=""
+        alt="Kids Banner"
       />
-      <h2>Kid's Collection</h2>
+      <h2>Products</h2>
 
       <div className="kids-products">
         {kidsProducts.map((product) => (

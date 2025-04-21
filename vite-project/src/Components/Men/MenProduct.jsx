@@ -59,12 +59,7 @@ const MenPage = () => {
               >
                 <ul>
                   {cat.items.map((item, i) => (
-                    <li
-                      key={i}
-                      onClick={() =>
-                        navigate("/src/Components/Collection/Collection.jsx")
-                      }
-                    >
+                    <li key={i} onClick={() => navigate("/collection")}>
                       {item}
                     </li>
                   ))}

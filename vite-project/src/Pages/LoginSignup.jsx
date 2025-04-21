@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../Styling/LoginSignup.css";
-import Footer from "../Components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
@@ -66,15 +65,38 @@ const LoginSignup = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      alert(isLogin ? "Login Successful!" : "Signup Successful!");
-      const userData = {
-        fullName: formData.fullName,
-        email: formData.email,
-        contact: formData.contact,
-      };
-      localStorage.setItem("user", JSON.stringify(userData));
-      setUser(userData);
-      navigate("/profile");
+      if (isLogin) {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (
+          !storedUser ||
+          storedUser.email !== formData.email ||
+          storedUser.password !== formData.password
+        ) {
+          alert("User not found. Please sign up first!");
+        } else {
+          alert("Login Successful!");
+          setUser(storedUser);
+          navigate("/profile");
+        }
+      } else {
+        const userData = {
+          fullName: formData.fullName,
+          email: formData.email,
+          contact: formData.contact,
+          password: formData.password,
+        };
+        localStorage.setItem("user", JSON.stringify(userData));
+        alert("Signup Successful! Now please log in.");
+        setIsLogin(true);
+        setFormData({
+          fullName: "",
+          email: "",
+          contact: "",
+          password: "",
+          confirmPassword: "",
+        });
+        setErrors({});
+      }
     }
   };
 
@@ -86,7 +108,13 @@ const LoginSignup = () => {
   return (
     <div className="login-wrapper">
       <nav className="navbar">
-        <h1 className="brand">TrendKart</h1>
+        <h1
+          className="brand"
+          onClick={() => navigate("/Shop")}
+          style={{ cursor: "pointer" }}
+        >
+          TrendKart
+        </h1>
         {user ? (
           <div className="user-info">
             <span className="welcome-text">Welcome, {user.fullName}</span>
@@ -126,6 +154,7 @@ const LoginSignup = () => {
                 {errors.fullName && <p className="error">{errors.fullName}</p>}
               </div>
             )}
+
             <div className="input-group">
               <label>Email</label>
               <input
@@ -137,6 +166,7 @@ const LoginSignup = () => {
               />
               {errors.email && <p className="error">{errors.email}</p>}
             </div>
+
             {!isLogin && (
               <div className="input-group">
                 <label>Contact Number</label>
@@ -150,6 +180,7 @@ const LoginSignup = () => {
                 {errors.contact && <p className="error">{errors.contact}</p>}
               </div>
             )}
+
             <div className="input-group">
               <label>Password</label>
               <input
@@ -161,6 +192,7 @@ const LoginSignup = () => {
               />
               {errors.password && <p className="error">{errors.password}</p>}
             </div>
+
             {!isLogin && (
               <div className="input-group">
                 <label>Confirm Password</label>
@@ -176,6 +208,7 @@ const LoginSignup = () => {
                 )}
               </div>
             )}
+
             <button className="submit-btn">
               {isLogin ? "Login" : "Sign Up"}
             </button>
@@ -189,8 +222,6 @@ const LoginSignup = () => {
           </p>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

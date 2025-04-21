@@ -11,7 +11,6 @@ const heroImages = [
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,58 +35,50 @@ const Hero = () => {
         />
       </div>
 
-      <div className="toggle-section">
-        <button className="toggle-btn" onClick={() => setShowMore(!showMore)}>
-          {showMore ? "Hide Offers" : "Explore More"}
-        </button>
-      </div>
-
-      {showMore && (
-        <div className="hero-content">
-          <div className="hero-box">
-            <h2>NEW ARRIVAL</h2>
-            <h5>New</h5>
-            <h5>Collection</h5>
-            <h5>for everyone</h5>
-            <button
-              className="collection-btn"
-              onClick={() => navigate("../Collection/Collection.jsx")}
-            >
-              Latest Collection
-            </button>
-          </div>
-
-          <div className="scrolling-img-wrapper">
-            <img
-              src="https://img.freepik.com/free-photo/two-beautiful-women-shopping-town_1303-16426.jpg"
-              alt="Scrolling"
-              className="scrolling-img"
-            />
-          </div>
-
-          <div className="hero-box">
-            <h2>NEW ARRIVAL</h2>
-            <h5>New</h5>
-            <h5>Collection</h5>
-            <h5>for everyone</h5>
-            <button
-              className="collection-btn"
-              onClick={() => navigate("../Collection/Collection.jsx")}
-            >
-              Latest Collection
-            </button>
-          </div>
-
-          <div className="video-section">
-            <video controls autoPlay loop muted className="video">
-              <source
-                src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Bo-ziHq_jlbqx8330/videoblocks-sell16_bf6eitlb3__2de05e0e4d9479db30a1bf08385a1810__P360.mp4"
-                type="video/mp4"
-              />
-            </video>
-          </div>
+      <div className="hero-content">
+        <div className="hero-box">
+          <h2>NEW ARRIVAL</h2>
+          <h5>New</h5>
+          <h5>Collection</h5>
+          <h5>for everyone</h5>
+          <button
+            className="collection-btn"
+            onClick={() => navigate("../Collection/Collection.jsx")}
+          >
+            Latest Collection
+          </button>
         </div>
-      )}
+
+        <div className="scrolling-img-wrapper">
+          <img
+            src="https://img.freepik.com/free-photo/two-beautiful-women-shopping-town_1303-16426.jpg"
+            alt="Scrolling"
+            className="scrolling-img"
+          />
+        </div>
+
+        <div className="hero-box">
+          <h2>NEW ARRIVAL</h2>
+          <h5>New</h5>
+          <h5>Collection</h5>
+          <h5>for everyone</h5>
+          <button
+            className="collection-btn"
+            onClick={() => navigate("../Collection/Collection.jsx")}
+          >
+            Latest Collection
+          </button>
+        </div>
+
+        <div className="video-section">
+          <video controls autoPlay loop muted className="video">
+            <source
+              src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Bo-ziHq_jlbqx8330/videoblocks-sell16_bf6eitlb3__2de05e0e4d9479db30a1bf08385a1810__P360.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
     </div>
   );
 };

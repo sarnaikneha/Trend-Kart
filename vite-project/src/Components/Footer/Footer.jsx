@@ -16,9 +16,9 @@ const Footer = () => {
     } else if (!emailRegex.test(email)) {
       setError("Enter a valid email address!");
     } else {
-      setError(""); // Clear error if valid
+      setError("");
       alert("Thank you for subscribing! 🎉");
-      setEmail(""); // Clear input field
+      setEmail("");
     }
   };
 

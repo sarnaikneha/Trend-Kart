@@ -4,12 +4,20 @@ import img1 from "../../assets/img1.webp";
 import img2 from "../../assets/img2.webp";
 import img3 from "../../assets/img3.webp";
 import img4 from "../../assets/img4.webp";
+import img7 from "../../assets/img 7.webp";
+import img8 from "../../assets/img 8.webp";
+import img9 from "../../assets/img 9.webp";
+import img10 from "../../assets/img10.webp";
 
 const itemsData = [
   { id: 1, img: img1, name: "Kurti", price: "₹1500", rating: 4.5 },
   { id: 2, img: img2, name: "Kurti", price: "₹1200", rating: 4.0 },
   { id: 3, img: img3, name: "Kurti", price: "₹1800", rating: 4.8 },
   { id: 4, img: img4, name: "Kurti", price: "₹1300", rating: 4.2 },
+  { id: 5, img: img7, name: "dress", price: "₹800", rating: 5.0 },
+  { id: 6, img: img8, name: "dress", price: "₹1000", rating: 4.0 },
+  { id: 7, img: img9, name: "dress", price: "₹1400", rating: 4.5 },
+  { id: 8, img: img10, name: "dress", price: "₹1200", rating: 4.9 },
 ];
 
 const getStars = (rating) => {
@@ -28,13 +36,6 @@ const Items = () => {
   return (
     <div className="items-wrapper">
       <h3>Popular in Women</h3>
-
-      <button
-        className="toggle-button"
-        onClick={() => setShowItems(!showItems)}
-      >
-        {showItems ? "Hide Products" : "Show Products"}
-      </button>
 
       {showItems && (
         <div className="items-grid">

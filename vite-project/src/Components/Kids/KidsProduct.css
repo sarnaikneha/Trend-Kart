@@ -1,37 +1,33 @@
 /* Base Styles (your existing code remains unchanged) */
 
 body {
-  overflow-x: hidden;
-  width: 100vw;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
 .kids-page {
   text-align: center;
   padding: 20px;
-  margin-top: 30px;
-  font-family: Arial, sans-serif;
-
-  width: 100vw;
-  max-width: 100%;
-  overflow-x: hidden;
+  margin-top: 40px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .kids-page h2 {
+  background-color: #d27ef4;
   color: #f3ebeb;
-  margin-right: 10px;
-  width: 100vw;
   font-size: 28px;
-  margin-bottom: 2px;
-  background-color: #bd45ed;
+  margin-bottom: 10px;
+  padding: 10px 0;
 }
 
 .category-list {
   display: flex;
   justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
   margin-bottom: 20px;
   position: relative;
 }
@@ -105,15 +101,12 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.3s ease;
   width: 220px;
-  min-height: 300px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  transition: transform 0.3s ease;
 }
 
 .kids-product-card:hover {
@@ -192,28 +185,16 @@ body {
 
 /* Tablets (≤768px) */
 @media screen and (max-width: 768px) {
-  .kids-page {
-    margin-left: 0;
-    padding: 15px;
-  }
-
   .kids-page h2 {
     font-size: 24px;
   }
 
-  .category-list {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
   .dropdown {
-    left: auto;
-    right: 0;
     width: 160px;
   }
 
   .kids-page img {
-    height: 220px;
+    max-height: 220px;
   }
 
   .kids-product-card {
@@ -221,16 +202,10 @@ body {
   }
 }
 
-/* Mobile (≤480px) */
+/* Small Devices: Mobiles (≤480px) */
 @media screen and (max-width: 480px) {
-  .kids-page {
-    margin-left: 0;
-    padding: 10px;
-  }
-
   .kids-page h2 {
     font-size: 20px;
-    padding: 10px 0;
   }
 
   .category-list {
@@ -241,24 +216,21 @@ body {
 
   .dropdown {
     position: static;
-    width: 100%;
     box-shadow: none;
-    border-radius: 0;
+    width: 100%;
     display: block !important;
   }
 
   .kids-page img {
-    height: 180px;
+    max-height: 180px;
   }
 
   .kids-product-card {
     width: 90%;
-    margin: auto;
   }
 
   .product-info h3 {
     font-size: 14px;
-    text-align: center;
   }
 
   .price,

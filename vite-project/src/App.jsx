@@ -27,10 +27,7 @@ function App() {
 
           <Route />
           <Route path="/cart" element={<Cart />} />
-          <Route
-            path="./Components/Collection/Collection.jsx"
-            element={<Collection />}
-          />
+          <Route path="/collection" element={<Collection />} />
 
           <Route path="/payment" element={<Payment />} />
           <Route path="login" element={<LoginSignup />} />
