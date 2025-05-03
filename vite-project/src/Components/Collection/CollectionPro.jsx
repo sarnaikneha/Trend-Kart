@@ -266,19 +266,6 @@ const Shop = () => {
   return (
     <div>
       {/* Navigation Bar */}
-      <nav className="shop-nav">
-        <h3
-          className="brand"
-          onClick={() => navigate("/Shop")}
-          style={{ cursor: "pointer" }}
-        >
-          TrendKart
-        </h3>
-        <a href="#home">Home</a>
-        <a href="#men">Men</a>
-        <a href="#women">Women</a>
-        <a href="#kids">Kids</a>
-      </nav>
 
       {/* Hero Section */}
       <div id="home" className="hero">
@@ -288,6 +275,13 @@ const Shop = () => {
           Shop Now
         </button>
       </div>
+
+      <nav className="shop-nav">
+        <a href="#home">Home</a>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#kids">Kids</a>
+      </nav>
 
       {/* Men's Section */}
       <div id="men" className="category-section">

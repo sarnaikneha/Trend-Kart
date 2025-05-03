@@ -15,18 +15,21 @@ html {
 /* Navigation Bar */
 .shop-nav {
   display: flex;
+
   justify-content: center;
-  background: #e5a8f0;
+
+  background: hsl(300, 8%, 97%);
   padding: 15px 10px;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
+  margin-top: 5rem;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .shop-nav a {
-  color: white;
+  color: rgb(60, 59, 59);
   text-decoration: none;
   padding: 10px 15px;
   margin: 0 10px;
@@ -97,19 +100,26 @@ html {
 }
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  padding: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Or space-between / space-evenly */
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Product Card */
 .product-card {
   background: #fff;
+  width: 250px; /* Fixed width for layout consistency */
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .product-card:hover {
@@ -164,21 +174,99 @@ footer {
 }
 
 /* Responsive Fix for Hero Section on Mobile */
+/* Tablet (768px and below) */
 @media screen and (max-width: 768px) {
+  .shop-nav h3 {
+    margin-right: auto;
+    font-size: 20px;
+  }
+
+  .shop-nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .shop-nav a {
+    padding: 8px;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .category-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .buy-now {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  .product-card {
+    width: 45%;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile (480px and below) */
+@media screen and (max-width: 480px) {
+  .hero {
+    padding: 80px 15px 40px;
+    height: auto;
+  }
+
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+  .product-card {
+    width: 100%;
   }
 
   .hero p {
-    font-size: 1rem;
-  }
-
-  .shop-now {
-    padding: 10px 20px;
     font-size: 0.95rem;
   }
 
+  .shop-now {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+
+  .shop-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .shop-nav h3 {
+    font-size: 18px;
+    margin: 0 0 10px 10px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    padding: 0 5px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
   .product-image {
-    height: 180px;
+    height: 160px;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 0.95rem;
+  }
+
+  .buy-now {
+    font-size: 0.85rem;
+    padding: 8px 12px;
   }
 }

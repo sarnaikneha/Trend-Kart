@@ -3,7 +3,9 @@
   text-align: center;
   padding: 40px 10%;
   background-color: #efd3f2;
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -37,9 +39,10 @@
   padding: 10px;
   border-radius: 8px;
   border: none;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   font-size: 1rem;
-  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .subscribe-box button {
@@ -51,6 +54,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  width: auto;
 }
 
 .subscribe-box button:hover {
@@ -108,7 +112,7 @@
 
 /* ================= MEDIA QUERIES ================= */
 
-/* Laptops & Tablets */
+/* Tablets & smaller laptops */
 @media (max-width: 1024px) {
   .footer-content h2 {
     font-size: 1.7rem;
@@ -116,7 +120,6 @@
 
   .subscribe-box input {
     width: 100%;
-    max-width: 100%;
   }
 
   .subscribe-box button {
